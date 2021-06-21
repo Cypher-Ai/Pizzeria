@@ -1,1 +1,24 @@
-<p>item works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card mb-4 box-shadow">
+            <img class="card-img-top" data-src={{productItem.imgUrl}} alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{productItem.nombre}}</h4>
+              <p class="card-text">{{productItem.detalles}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-success">Ordenar</button>
+                </div>
+                <small class="text-muted">S/.{{productItem.precios[0]}}</small>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
