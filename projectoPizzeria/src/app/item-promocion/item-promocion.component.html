@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/0bb65a3cb0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="card mb-4 box-shadow">
+    <img class="card-img-top" data-src={{promocionItem.imgUrl}} alt="Card image cap">
+    <div class="card-body d-flex flex-column">
+      <h4 class="card-title"><b>{{promocionItem.nombre}}</b></h4>
+      <p class="card-text">{{promocionItem.detalles}}</p>
+      <div class="mt-auto d-flex justify-content-between">
+        <div class="form-group">
+          <select class="form-select" >
+            <option *ngFor="let precio of promocionItem.precios; let i=index">
+              {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn btn-success cart-button px-3">
+            <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

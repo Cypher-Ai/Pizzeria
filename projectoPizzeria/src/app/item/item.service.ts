@@ -13,9 +13,18 @@ export class ItemService {
     new Item(3,"Pizza Salami","Pizza con Salami :pog:",[14.00,30.00],["Mediana","Familiar"],"https://beta.da-antonio.be/wp-content/uploads/2018/11/salami.jpeg"),
   ]
 
+  promociones: Item[]=[
+    new Item(0,"Las picositas","Lleva cualquiera de las 3 Pizzas favoritas por el público con pan al ajo gratis con un descuento (Solo pizzas familiares)",
+    [30.00,28.00,30.00],["Hawaiana Light","Peperoni","Vegetariana"],"../../assets/Las picositas.jpg"),
+    new Item(1,"La segunda vuelta","Llevate una pizza no se que poner, inserteTexto()",
+    [35.00,35.00],["La Roja Suprema","La Carcelera"],"../../assets/La seguna vuelta.png"),
+  ]
   constructor() { }
 
   getItems(): Item[]{
     return this.items;
+  }
+  getPromociones(): Item[]{
+    return this.promociones;
   }
 }

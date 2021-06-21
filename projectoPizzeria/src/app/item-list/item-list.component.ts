@@ -9,10 +9,12 @@ import { Item } from '../models/item';
 export class ItemListComponent{
 
   items: Item[] = []
+  promociones: Item[] =[]
   constructor(private ItemService:ItemService) { }
 
   ngOnInit(){
     this.items=this.ItemService.getItems();
+    this.promociones=this.ItemService.getPromociones();
   }
 
 }

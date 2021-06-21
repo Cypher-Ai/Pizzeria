@@ -6,13 +6,15 @@ import { ItemComponent } from './item/item.component';
 import { MainComponent } from './main/main.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     MainComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemPromocionComponent
   ],
   imports: [
     BrowserModule,
