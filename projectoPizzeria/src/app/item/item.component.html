@@ -16,9 +16,14 @@
       <h4 class="card-title"><b>{{productItem.nombre}}</b></h4>
       <p class="card-text">{{productItem.detalles}}</p>
       <div class="mt-auto d-flex justify-content-between">
-        <small class="text-muted">S/.{{productItem.precios[0]}}</small>
+        <div class="form-group">
+          <select class="form-select" >
+            <option *ngFor="let precio of productItem.precios; let i=index">
+              {{productItem.detallesPrecios[i]}} - S/{{productItem.precios[i]}}</option>
+          </select>
+        </div>
         <div>
-          <button class="btn btn-success cart-button px-5">
+          <button class="btn btn-success cart-button px-3">
             <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
           </button>
         </div>
