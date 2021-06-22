@@ -5,7 +5,9 @@ import { Item } from '../models/item';
   providedIn: 'root'
 })
 export class ItemService {
-
+  carrousel: String[]=[
+    
+  ]
   items: Item[]=[
     new Item(0,"Pizza Hawaiana","Deliciosa Pizza con Piña",[16.00,32.00],["Mediana","Familiar"],"https://nuestrasrecetas.es/wp-content/uploads/2015/05/hawaiana.jpg"),
     new Item(1,"Pizza Americana","Deliciosa Pizza con America",[14.00,30.00],["Mediana","Familiar"],"https://www.periodistadigital.com/wp-content/uploads/2020/02/pizza-americana.jpg"),
@@ -17,7 +19,7 @@ export class ItemService {
     new Item(0,"Las picositas","Lleva cualquiera de las 3 Pizzas favoritas por el público con pan al ajo gratis con un descuento (Solo pizzas familiares)",
     [30.00,28.00,30.00],["Hawaiana Light","Peperoni","Vegetariana"],"../../assets/Las picositas.jpg"),
     new Item(1,"La segunda vuelta","Llevate una pizza no se que poner, inserteTexto()",
-    [35.00,35.00],["La Roja Suprema","La Carcelera"],"../../assets/La seguna vuelta.png"),
+    [35.00,35.00],["La Roja Suprema","La Carcelera"],"../../assets/La seguna vuelta.jpg"),
   ]
   constructor() { }
 
