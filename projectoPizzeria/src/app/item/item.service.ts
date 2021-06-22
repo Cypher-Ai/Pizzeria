@@ -21,6 +21,10 @@ export class ItemService {
     new Item(1,"La segunda vuelta","Llevate una pizza no se que poner, inserteTexto()",
     [35.00,35.00],["La Roja Suprema","La Carcelera"],"../../assets/La seguna vuelta.jpg"),
   ]
+
+  extras: Item[]=[
+    new Item(0, "Pan al ajo","Rico pan al ajo JA",[6],["5 unidades"],"https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg")
+  ]
   constructor() { }
 
   getItems(): Item[]{
@@ -28,5 +32,8 @@ export class ItemService {
   }
   getPromociones(): Item[]{
     return this.promociones;
+  }
+  getExtras(): Item[]{
+    return this.extras;
   }
 }

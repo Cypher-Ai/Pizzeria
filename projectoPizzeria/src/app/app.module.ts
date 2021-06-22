@@ -8,6 +8,8 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { ItemPromocionComponent } from './item-promocion/item-promocion.componen
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,16 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  
+
 </head>
 
 <body>
   <div class="album py-5 bg-light">
-    
     <div class="container">
-      
-      
-      
+      <carousel
+      [images]="banners"
+      [height]="300"
+      [objectFit]="'contain'"
+      [cellWidth]="'100%'"
+      [autoplay]="true"
+      [dots]="true"
+      [loop]="true"
+      >
+      </carousel>
     </div>
     <div class="container">
       <h1><b>Nuestras promociones del dia</b></h1>
@@ -28,12 +34,20 @@
     <div class="container">
       <h1><b>Nuestras deliciosas pizzas</b></h1>
       <div class="row">
-          <div class="col-md-4" *ngFor="let item of items">
-            <app-item [productItem]="item"></app-item>
-          </div>
+        <div class="col-md-4" *ngFor="let item of items">
+          <app-item [productItem]="item"></app-item>
         </div>
       </div>
     </div>
+    <div class="container">
+      <h1><b>Extras: </b></h1>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let extra of extras">
+          <app-item [productItem]="extra"></app-item>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
