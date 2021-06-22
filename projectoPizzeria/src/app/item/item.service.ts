@@ -5,9 +5,6 @@ import { Item } from '../models/item';
   providedIn: 'root'
 })
 export class ItemService {
-  carrousel: String[]=[
-    
-  ]
   items: Item[]=[
     new Item(0,"Pizza Hawaiana","Deliciosa Pizza con Piña",[16.00,32.00],["Mediana","Familiar"],"https://nuestrasrecetas.es/wp-content/uploads/2015/05/hawaiana.jpg"),
     new Item(1,"Pizza Americana","Deliciosa Pizza con America",[14.00,30.00],["Mediana","Familiar"],"https://www.periodistadigital.com/wp-content/uploads/2020/02/pizza-americana.jpg"),
@@ -23,7 +20,8 @@ export class ItemService {
   ]
 
   extras: Item[]=[
-    new Item(0, "Pan al ajo","Rico pan al ajo JA",[6],["5 unidades"],"https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg")
+    new Item(0, "Pan al ajo","Rico pan al ajo JA",[6],["5 unidades"],"https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg"),
+    new Item(1, "Coca Cola Familiar","Coca cola de toda la vida",[6],["3 Litros"], "https://static.ulabox.com/media/102754_fb2.jpg")
   ]
   constructor() { }
 
