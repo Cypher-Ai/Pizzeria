@@ -5,6 +5,7 @@ export class Persona {
     public numeroTelefono: number,
     public numeroDni: number,
     public correo: string,
+    public fechaNacimiento: string,
     public contraseña: string
   ) {}
 }

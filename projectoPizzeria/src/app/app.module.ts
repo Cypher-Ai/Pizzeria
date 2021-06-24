@@ -7,9 +7,10 @@ import { MainComponent } from './main/main.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, ItemComponent, MainComponent, RegistroComponent],
+  declarations: [AppComponent, ItemComponent, MainComponent, RegistroComponent, LoginComponent],
 
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
