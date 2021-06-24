@@ -18,7 +18,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     ItemComponent,
     MainComponent,
     HeaderComponent,
-    Header2Component
+    Header2Component,
     MainComponent,
     ItemListComponent,
     ItemPromocionComponent
