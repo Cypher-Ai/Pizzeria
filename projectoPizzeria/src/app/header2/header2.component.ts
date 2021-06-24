@@ -16,11 +16,10 @@ export class Header2Component {
   estados:string[]=[this.estado1,this.estado2,this.estado3,this.estado4,this.estado5];
   
   activarBoton(estado:string):void{
-    for(var i=0;i<estado.length;i++)
+    for(var i=0;i<this.estados.length;i++){
       this.estados[i]="";
-    
+    } 
     estado="active";
-  
   }
 
   activarBoton1():void{
@@ -59,6 +58,5 @@ export class Header2Component {
     this.estado4=""
     this.estado3=""   
   }
-
 
 }
