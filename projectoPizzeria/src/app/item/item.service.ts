@@ -21,7 +21,7 @@ export class ItemService {
 
   extras: Item[]=[
     new Item(0, "Pan al ajo","Rico pan al ajo JA",[6],["5 unidades"],"https://www.gourmet.cl/wp-content/uploads/2014/09/pan-de-ajo.jpg"),
-    new Item(1, "Six pack","Coca cola de toda la vida",[6],["3 Litros"], "https://static.ulabox.com/media/102754_fb2.jpg")
+    new Item(1, "Six pack de Coca Cola","Coca cola de toda la vida",[6],["3 Litros"], "https://static.ulabox.com/media/102754_fb2.jpg")
   ]
   constructor() { }
 
