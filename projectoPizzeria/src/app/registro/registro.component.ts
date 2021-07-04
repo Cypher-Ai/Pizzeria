@@ -27,7 +27,6 @@ export class RegistroComponent {
   contraseniaInput!: string;
   confimarContraseniaInput!: string;
   persona1!: Persona;
-
   personas: Persona[] = [];
 
   formRegistro: FormGroup;
@@ -79,6 +78,7 @@ export class RegistroComponent {
     return this.formRegistro.controls;
   }
 
+  
   MustMatch(contrasenia1: string, confirmarContrasenia: string) {
     return (formRegistro: FormGroup) => {
       const control = formRegistro.controls[contrasenia1];
@@ -107,6 +107,8 @@ export class RegistroComponent {
   }
 
   personaRepetida() {
-    for (let i = 0; i < 3; i++) {}
+    for (let i = 0; i < 3; i++) {
+      
+    }
   }
 }
