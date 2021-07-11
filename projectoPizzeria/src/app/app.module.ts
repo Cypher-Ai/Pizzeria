@@ -6,6 +6,11 @@ import { ItemComponent } from './item/item.component';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { Header2Component } from './header2/header2.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
+
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -13,10 +18,15 @@ import { Header2Component } from './header2/header2.component';
     ItemComponent,
     MainComponent,
     HeaderComponent,
-    Header2Component
+    Header2Component,
+    MainComponent,
+    ItemListComponent,
+    ItemPromocionComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
