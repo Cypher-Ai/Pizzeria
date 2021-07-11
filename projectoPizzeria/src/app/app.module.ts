@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { MainComponent } from './main/main.component';
+<<<<<<< HEAD
 import { HeaderComponent } from './header/header.component';
 import { Header2Component } from './header2/header2.component';
 import { ItemListComponent } from './item-list/item-list.component';
@@ -17,6 +18,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     AppComponent,
     ItemComponent,
     MainComponent,
+<<<<<<< HEAD
     HeaderComponent,
     Header2Component,
     MainComponent,
