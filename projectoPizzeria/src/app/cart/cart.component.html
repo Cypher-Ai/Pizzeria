@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="album py-5 bg-light">
+    
+        <div class="container">
+            <h1><b>Carrito</b></h1>
+            <div *ngIf="cartItems.length === 0" class="alert alert-info"> Your cart is empty </div>
+            
+            <div *ngIf="cartItems.length > 0" class="row">
+                <div  *ngFor="let item of cartItems">
+                    <app-cart-item [cartItem]="item"></app-cart-item>
+                </div>
+            </div>
+
+            <div>
+                <strong>Total</strong> {{cartTotal |currency:"S./ "}}
+            </div>
+        </div>
+    
+    </div>
+</body>
+
+</html>
