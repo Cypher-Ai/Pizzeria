@@ -8,6 +8,11 @@ import { RegistroComponent } from './registro/registro.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { RegistroModalComponent } from './registro-modal/registro-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,9 +21,19 @@ import { LoginComponent } from './login/login.component';
     MainComponent,
     RegistroComponent,
     LoginComponent,
+    RegistroModalComponent,
+    LoginModalComponent,
   ],
 
-  imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+
+    BrowserAnimationsModule,
+  ],
   providers: [],
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
