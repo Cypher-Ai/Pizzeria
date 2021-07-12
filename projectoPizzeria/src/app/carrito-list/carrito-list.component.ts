@@ -14,5 +14,4 @@ export class CarritoListComponent{
   ngOnInit(): void {
     this.carritoitems=this.ItemService.getItems();
   }
-
 }

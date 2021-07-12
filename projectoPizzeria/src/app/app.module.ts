@@ -9,6 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CarritoItemComponent } from './carrito-item/carrito-item.component';
+import { CarritoListComponent } from './carrito-list/carrito-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     ItemComponent,
     MainComponent,
     ItemListComponent,
-    ItemPromocionComponent
+    ItemPromocionComponent,
+    CarritoItemComponent,
+    CarritoListComponent
   ],
   imports: [
     BrowserModule,

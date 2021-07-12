@@ -24,5 +24,4 @@ export class ItemListComponent{
     this.promociones=this.ItemService.getPromociones();
     this.extras=this.ItemService.getExtras();
   }
-  
 }
