@@ -9,11 +9,11 @@ export class Item {
     
     constructor(@Inject(Number) id:number, @Inject(String) nombre:string, @Inject(String) detalles:string,
         @Inject(Number) precios:number[],@Inject(String) detallesPrecios:string[],@Inject(Number) imgUrl:string) {
-    this.id=id;
-    this.nombre=nombre;
-    this.detalles=detalles;
-    this.precios=precios;
-    this.detallesPrecios=detallesPrecios;
-    this.imgUrl=imgUrl;
+        this.id=id;
+        this.nombre=nombre;
+        this.detalles=detalles;
+        this.precios=precios;
+        this.detallesPrecios=detallesPrecios;
+        this.imgUrl=imgUrl;
     }
 }

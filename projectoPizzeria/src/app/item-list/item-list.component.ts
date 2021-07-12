@@ -9,7 +9,7 @@ import { Item } from '../models/item';
 
 export class ItemListComponent{
   banners= [
-    {path: "../../assets/Principal.jpg"},
+    {path: "../../assets/Recurso 1.png"},
     {path: "../../assets/Las picositas.jpg"},
     {path: "../../assets/La seguna vuelta.jpg"}
   ]
