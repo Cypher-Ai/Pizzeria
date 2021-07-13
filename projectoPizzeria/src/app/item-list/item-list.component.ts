@@ -16,13 +16,14 @@ export class ItemListComponent{
   items: Item[] = []
   promociones: Item[] =[]
   extras: Item[] = []
-  
+  bebidas: Item[] = []
   constructor(private ItemService:ItemService) { }
   
   ngOnInit(){
     this.items=this.ItemService.getItems();
     this.promociones=this.ItemService.getPromociones();
     this.extras=this.ItemService.getExtras();
+    this.bebidas=this.ItemService.getbebidas();
   }
   
 }
