@@ -14,6 +14,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
