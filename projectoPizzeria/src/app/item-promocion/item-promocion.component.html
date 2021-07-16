@@ -17,7 +17,8 @@
       <p class="card-text">{{promocionItem.detalles}}</p>
       <div class="mt-auto d-flex justify-content-between">
         <div class="form-group">
-          <select [(ngModel)]="Seleccionado"  class="form-select" id="item">
+          <select class="form-select" id="item">
+            <option selected>Seleccione un tipo</option>
             <option [ngValue]="i" *ngFor="let precio of promocionItem.precios let i=index">
               {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
           </select>
