@@ -30,19 +30,23 @@ export class ItemComponent{
   // tslint:disable-next-line: typedef
   AddToCart(){
     // Enviar el producto
+    if (this.Seleccionado != "Seleccione un tipo") {
     // tslint:disable-next-line: max-line-length
-    this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
-    this.msj.enviarDatos(this.cartItem);
-    console.log(this.cartItem.precio);
+      this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
+      this.msj.enviarDatos(this.cartItem);
+    } else {
+      alert("Seleccione un tipo, no sea imbécil")
+    }
   }
   // tslint:disable-next-line: typedef
   capturarPrecio(){
 // Enviar el precio del producto
   this.verSeleccion = this.Seleccionado;
   this.indice = Number(this.verSeleccion);
-  console.log(this.indice);
+  
   return this.indice;
   }
+  
 }
 
 

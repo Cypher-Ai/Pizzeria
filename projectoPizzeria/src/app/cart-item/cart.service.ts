@@ -9,6 +9,7 @@ import { Subject } from 'rxjs'
 
 export class CartService{
     subject = new Subject();
+    subject_remove = new Subject();
 
     constructor(){}
 
@@ -20,5 +21,14 @@ export class CartService{
     // tslint:disable-next-line: typedef
     recibirDatos(){
         return this.subject.asObservable();
+    }
+
+    enviarDatos_remove(item_remove: unknown){
+        // console.log(item)
+        this.subject_remove.next(item_remove)
+    }
+    // tslint:disable-next-line: typedef
+    recibirDatos_remove(){
+        return this.subject_remove.asObservable();
     }
 }

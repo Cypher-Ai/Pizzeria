@@ -1,21 +1,21 @@
 <div class="card mb-0" alt="max-width: 100%">
     <div class="row g-0">
-        <div class="col-md-3">
+        <div class="col-md-5">
             <div class="imaytex">
                 <img id="imagen" data-src={{cartItem.imgUrl}} class="mg-fluiid rounded-start" alt="Card image cap">
             </div>
-            <div class="imaytex" style="text-align: justify;">
+            <div class="imaytex">
                 <h6 id="nombreproducto" class="card-title"><b>{{cartItem.nombre}}</b></h6>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card-body">
-                <p id="preciounitario" class="card-text"><small class="text-muted">{{cartItem.precio| currency:'PEN':'S/':'1.2-2'}}</small></p>
             </div>
         </div>
         <div class="col-md-2">
             <div class="card-body">
-            <form class="form-group" name="formulario" method="post" action="/send.php">
+                <p style="text-align: center;" id="preciounitario" class="card-text"><small class="text-muted">{{cartItem.precio| currency:'PEN':'S/':'1.2-2'}}</small></p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card-body">
+            <form style="text-align: center;" class="form-group" name="formulario" method="post" action="/send.php">
                 <p id="preciounitario" class="card-text"><small class="text-muted">{{cartItem.cantidad}}</small></p>
             </form>
             </div>
@@ -25,9 +25,9 @@
                 <p id="subtotal" class="card-text"><small class="text-muted">{{(cartItem.cantidad * cartItem.precio) | currency:'PEN':'S/':'1.2-2'}}</small></p>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
             <div class="card-body">
-            <button id="btn" type="button" class="btn btn-danger">Eliminar</button>
+                <button id="btn" type="button" class="btn btn-danger" (click)="quitarCartItem()">Eliminar</button>
             </div>
         </div>
     </div>

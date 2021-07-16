@@ -19,9 +19,7 @@
     margin-left: 20%;
     color: rgb(119, 119, 131);
 }
-#preciounitario{
-    margin-right: 4.5vw;
-}
+
 .card-body{
     text-align: center;
 }
@@ -32,7 +30,7 @@
     float: left;
 }
 #subtotal{
-    margin-left: 6.5vw;
+    
 }
 .btn{
     margin-right: 0vw;

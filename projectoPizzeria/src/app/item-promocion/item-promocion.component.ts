@@ -11,7 +11,8 @@ import { CartItem } from '../models/cart-item';
 })
 export class ItemPromocionComponent{
 
-  @Input() promocionItem!: Item;
+  @Input() 
+  promocionItem!: Item;
   cartItem!: CartItem;
 
   faShoppingCart = faShoppingCart;
@@ -27,15 +28,21 @@ export class ItemPromocionComponent{
   // tslint:disable-next-line: typedef
   AddToCart(){
     
-    this.cartItem = new CartItem(this.promocionItem.id, this.promocionItem.nombre + ' - ' + String(this.promocionItem.detallesPrecios[this.indice]), this.promocionItem.detalles, this.promocionItem.precios[this.indice], 1, this.promocionItem.imgUrl);
-    this.msj.enviarDatos(this.cartItem);
-    console.log(this.cartItem.precio);
+    if (this.Seleccionado != "Seleccione un tipo") {
+      // tslint:disable-next-line: max-line-length
+      this.cartItem = new CartItem(this.promocionItem.id, this.promocionItem.nombre + ' - ' + String(this.promocionItem.detallesPrecios[this.indice]), this.promocionItem.detalles, this.promocionItem.precios[this.indice], 1, this.promocionItem.imgUrl);
+      this.msj.enviarDatos(this.cartItem);
+    } else {
+      alert("Seleccione un tipo, no sea imbécil")
+    }
   }
   capturarPrecio(){
     // Enviar el precio del producto
+    
       this.verSeleccion = this.Seleccionado;
       this.indice = Number(this.verSeleccion);
-      console.log(this.indice);
+      
       return this.indice;
+    
   }
 }

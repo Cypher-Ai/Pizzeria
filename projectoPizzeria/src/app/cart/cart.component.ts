@@ -1,8 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { CartService } from '../cart-item/cart.service';
-import { Item } from '../models/item';
-import { ItemComponent } from '../item/item.component';
-import { Input } from '@angular/core';
 import { CartItem } from '../models/cart-item';
 
 @Component({
@@ -18,16 +15,29 @@ export class CartComponent implements OnInit {
     // { id:3, nombre:"Pizza 3", detalles:"", precio:15, cantidad:1, imgUrl:"" },
     // { id:4, nombre:"Pizza 4", detalles:"", precio:20, cantidad:1, imgUrl:"" }
   cartTotal = 0;
-
   
-  constructor(private msj: CartService ) { }
+  
+  constructor(private msj: CartService) { }
   ngOnInit(): void {
 
-    this.msj.recibirDatos().subscribe((item: any) => {
-      console.log(item);
+    this.msj.recibirDatos().subscribe(
+      (item: any) => {
       // tslint:disable-next-line: no-unused-expression
       this.addProductToCart(item);
-    });
+      console.log(this.cartItems)
+      },
+      
+    );
+
+    this.msj.recibirDatos_remove().subscribe(
+      (item_remove: any) => {
+      // tslint:disable-next-line: no-unused-expression
+      
+      this.removeProductTocart(this.cartItems, item_remove);
+      console.log(this.cartItems)
+      },
+      
+    );
   }
 
   // tslint:disable-next-line: typedef
@@ -35,7 +45,7 @@ export class CartComponent implements OnInit {
     let productExists = false;
     for(let i in this.cartItems){
       if(this.cartItems[i].nombre === item.nombre){
-        this.cartItems[i].cantidad++;
+        this.cartItems[i].cantidad+=1;
         productExists = true;
         break;
       }
@@ -47,7 +57,7 @@ export class CartComponent implements OnInit {
         nombre: item.nombre,
         detalles: item.detalles,
         precio: item.precio,
-        cantidad: 1,
+        cantidad: item.cantidad,
         imgUrl: item.imgUrl,
       });
     }
@@ -58,7 +68,15 @@ export class CartComponent implements OnInit {
     });
   }
 
-  
+  removeProductTocart( lista: CartItem[], item: CartItem){
+    for(const i in lista){
+      if(lista[i].nombre === item.nombre){
+        lista.splice(Number(i),1)
+        this.cartTotal -= (item.cantidad*item.precio);
+        break;
+      }
+    }
+  }
 }
 
 
