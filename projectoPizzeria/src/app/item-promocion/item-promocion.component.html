@@ -16,12 +16,13 @@
       <h4 class="card-title"><b>{{promocionItem.nombre}}</b></h4>
       <p class="card-text">{{promocionItem.detalles}}</p>
       <div class="mt-auto d-flex justify-content-between">
-        <div class="form-group">
-          <select [(ngModel)]="Seleccionado"  class="form-select" id="item">
+        <fieldset class="form-group">
+          <select  [(ngModel)]="Seleccionado"  class="form-select" id="item">
+            <option disabled selected>Seleccione un tipo</option>
             <option [ngValue]="i" *ngFor="let precio of promocionItem.precios let i=index">
-              {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
+              {{promocionItem.detallesPrecios[i]}} - {{promocionItem.precios[i]| currency:'PEN':'S/':'1.2-2'}}</option>
           </select>
-        </div>
+        </fieldset>
         <div>
           <button class="btn btn-success cart-button px-3" (click)="capturarPrecio()" (click)="AddToCart()">
             <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>

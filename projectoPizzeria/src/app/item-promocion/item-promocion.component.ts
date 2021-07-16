@@ -16,7 +16,7 @@ export class ItemPromocionComponent{
 
   faShoppingCart = faShoppingCart;
 
-  Seleccionado: string = '0';
+  Seleccionado: string = 'Seleccione un tipo';
   verSeleccion: string = '';
 
   indice!: number;
