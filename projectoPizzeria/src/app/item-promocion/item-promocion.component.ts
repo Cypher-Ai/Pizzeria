@@ -1,8 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../models/item';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+//Conexión con el carrito
 import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
+//Texto de alerta
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-item-promocion',
@@ -33,7 +37,7 @@ export class ItemPromocionComponent{
       this.cartItem = new CartItem(this.promocionItem.id, this.promocionItem.nombre + ' - ' + String(this.promocionItem.detallesPrecios[this.indice]), this.promocionItem.detalles, this.promocionItem.precios[this.indice], 1, this.promocionItem.imgUrl);
       this.msj.enviarDatos(this.cartItem);
     } else {
-      alert("Seleccione un tipo, no sea imbécil")
+      this.showAlert();
     }
   }
   capturarPrecio(){
@@ -44,5 +48,21 @@ export class ItemPromocionComponent{
       
       return this.indice;
     
+  }
+
+  showAlert(){
+    Swal.fire({
+      title: 'Any fool can use a computer, please select an option',
+      
+      width: 600,
+      padding: '3em',
+      background: '#fff url(/images/trees.png)',
+      backdrop: `
+        rgba(215,206,178,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+    })
   }
 }

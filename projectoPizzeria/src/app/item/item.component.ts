@@ -3,7 +3,8 @@ import { Item } from '../models/item';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
-
+//Texto de alerta
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-item',
@@ -35,7 +36,7 @@ export class ItemComponent{
       this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
       this.msj.enviarDatos(this.cartItem);
     } else {
-      alert("Seleccione un tipo, no sea imbécil")
+      this.showAlert();
     }
   }
   // tslint:disable-next-line: typedef
@@ -46,7 +47,21 @@ export class ItemComponent{
   
   return this.indice;
   }
-  
+  showAlert(){
+    Swal.fire({
+      title: 'Any fool can use a computer, please select an option',
+      
+      width: 600,
+      padding: '3em',
+      background: '#fff url(/images/trees.png)',
+      backdrop: `
+        rgba(215,206,178,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+    })
+  }
 }
 
 
