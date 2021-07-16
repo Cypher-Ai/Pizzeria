@@ -18,7 +18,7 @@
       <div class="mt-auto d-flex justify-content-between">
         <div class="form-group">
           <select [(ngModel)]="Seleccionado"  class="form-select" id="item">
-            <option [ngValue]="precio" *ngFor="let precio of promocionItem.precios let i=index">
+            <option [ngValue]="i" *ngFor="let precio of promocionItem.precios let i=index">
               {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
           </select>
         </div>

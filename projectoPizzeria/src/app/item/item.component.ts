@@ -20,7 +20,7 @@ export class ItemComponent{
   Seleccionado: string = '0';
   verSeleccion: string = '';
 
-  precioExacto!: number;
+  indice!: number;
 
 
   constructor(private msj: CartService){
@@ -31,7 +31,7 @@ export class ItemComponent{
   AddToCart(){
     // Enviar el producto
     // tslint:disable-next-line: max-line-length
-    this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + "- S/." + String(this.precioExacto), this.productItem.detalles, this.precioExacto, 1, this.productItem.imgUrl);
+    this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
     this.msj.enviarDatos(this.cartItem);
     console.log(this.cartItem.precio);
   }
@@ -39,9 +39,9 @@ export class ItemComponent{
   capturarPrecio(){
 // Enviar el precio del producto
   this.verSeleccion = this.Seleccionado;
-  this.precioExacto = Number(this.verSeleccion);
-  console.log(this.precioExacto);
-  return this.precioExacto;
+  this.indice = Number(this.verSeleccion);
+  console.log(this.indice);
+  return this.indice;
   }
 }
 
