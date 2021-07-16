@@ -1,7 +1,8 @@
 .card{
-    height: 45vh;
+    height: 60vh;
     max-height: 500px;
 }
 img{
     height: 50%;
+    object-fit: cover;
 }

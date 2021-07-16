@@ -19,7 +19,7 @@
         <div class="form-group">
           <select class="form-select" >
             <option *ngFor="let precio of promocionItem.precios; let i=index">
-              {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
+              {{promocionItem.detallesPrecios[i]}} - {{promocionItem.precios[i] | currency:'PEN':'S/':'1.2-2'}}</option>
           </select>
         </div>
         <div>
