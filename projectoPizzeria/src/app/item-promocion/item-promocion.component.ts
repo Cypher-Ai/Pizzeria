@@ -36,6 +36,7 @@ export class ItemPromocionComponent{
       // tslint:disable-next-line: max-line-length
       this.cartItem = new CartItem(this.promocionItem.id, this.promocionItem.nombre + ' - ' + String(this.promocionItem.detallesPrecios[this.indice]), this.promocionItem.detalles, this.promocionItem.precios[this.indice], 1, this.promocionItem.imgUrl);
       this.msj.enviarDatos(this.cartItem);
+      this.showAdded();
     } else {
       this.showAlert();
     }
@@ -50,19 +51,48 @@ export class ItemPromocionComponent{
     
   }
 
-  showAlert(){
-    Swal.fire({
-      title: 'Any fool can use a computer, please select an option',
+  swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
       
+    },
+    buttonsStyling: false
+  })
+  showAlert(){
+    this.swalWithBootstrapButtons.fire({
+      title: 'Seleccione una opción',
+      icon: "error",
+      showConfirmButton: true,
+      confirmButtonText: "De acuerdo",
       width: 600,
       padding: '3em',
       background: '#fff url(/images/trees.png)',
       backdrop: `
-        rgba(215,206,178,0.4)
+        rgba(248,244,237,0.4)
         url("/images/nyan-cat.gif")
         left top
         no-repeat
       `
+    })
+  }
+
+  Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  
+  showAdded(){
+    this.Toast.fire({
+      icon: 'success',
+      title: 'Añadido correctamente'
     })
   }
 }
