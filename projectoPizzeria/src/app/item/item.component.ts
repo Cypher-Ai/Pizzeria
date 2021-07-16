@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { Item } from '../models/item';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css'],
+  styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class ItemComponent{
+  @Input() productItem!: Item;
+  faShoppingCart=faShoppingCart;
 }
