@@ -4,38 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { MainComponent } from './main/main.component';
-import { RegistroComponent } from './registro/registro.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { RegistroModalComponent } from './registro-modal/registro-modal.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginModalComponent } from './login-modal/login-modal.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PersonaServicio } from './persona.service';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     MainComponent,
-    RegistroComponent,
-    LoginComponent,
-    RegistroModalComponent,
-    LoginModalComponent,
+    ItemListComponent,
+    ItemPromocionComponent
   ],
-
   imports: [
-    CommonModule,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbModule,
-    BrowserAnimationsModule,
+    FontAwesomeModule,
+    IvyCarouselModule
   ],
-  providers: [PersonaServicio],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

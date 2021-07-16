@@ -11,15 +11,15 @@
 
 <body>
   <div class="card mb-4 box-shadow">
-    <img class="card-img-top" data-src={{productItem.imgUrl}} alt="Card image cap">
+    <img class="card-img-top" data-src={{promocionItem.imgUrl}} alt="Card image cap">
     <div class="card-body d-flex flex-column">
-      <h4 class="card-title"><b>{{productItem.nombre}}</b></h4>
-      <p class="card-text">{{productItem.detalles}}</p>
+      <h4 class="card-title"><b>{{promocionItem.nombre}}</b></h4>
+      <p class="card-text">{{promocionItem.detalles}}</p>
       <div class="mt-auto d-flex justify-content-between">
         <div class="form-group">
           <select class="form-select" >
-            <option *ngFor="let precio of productItem.precios; let i=index">
-              {{productItem.detallesPrecios[i]}} - S/{{productItem.precios[i]}}</option>
+            <option *ngFor="let precio of promocionItem.precios; let i=index">
+              {{promocionItem.detallesPrecios[i]}} - S/{{promocionItem.precios[i]}}</option>
           </select>
         </div>
         <div>
