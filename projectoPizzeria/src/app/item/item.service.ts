@@ -30,7 +30,7 @@ export class ItemService {
     new Item(7,"Pizza Hawaiana Chiken BBBQ","Exquisita Pizza Tropical bañada en sabrosa Salsa Barbacoa, combinada con Pollo a la parrilla, Tocino, Cebolla Blanca y jugosos trozos de Piña. ¡Te la recomendamos!",
     [45.50,53,50],["Grande","Familiar"],"https://i.pinimg.com/originals/24/d0/d1/24d0d1170041a54d790b06108a1039c2.jpg"),
     
-    new Item(7,"Pizza Siciliana","¡Las mejores carnes embutidas en una sola Pizza! Hecha para los amantes del Salame, Chorizo, Salchicha Italiana y Pepperoni. Junto a nuestro exiquisito Queso Mozzarella hacen de esta pizza una verdadera delicia.",
+    new Item(8,"Pizza Siciliana","¡Las mejores carnes embutidas en una sola Pizza! Hecha para los amantes del Salame, Chorizo, Salchicha Italiana y Pepperoni. Junto a nuestro exiquisito Queso Mozzarella hacen de esta pizza una verdadera delicia.",
     [45.50,53,50],["Grande","Familiar"],"https://www.vanidades.com/wp-content/uploads/2018/06/Pizza-siciliana-de-kamut.jpg")
   ]
 
