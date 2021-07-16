@@ -1,21 +1,16 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  MinLengthValidator,
-  Validators,
-} from '@angular/forms';
-import { Persona } from './persona.model';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Persona } from '../persona.model';
+import { PersonaServicio } from '../persona.service';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css'],
 })
-export class RegistroComponent {
+export class RegistroComponent implements OnInit {
   titulo: string = 'Registro de datos';
-
   submitted: boolean = false;
 
   nombresInput!: string;
@@ -26,62 +21,43 @@ export class RegistroComponent {
   fechaNacimientoInput!: string;
   contraseniaInput!: string;
   confimarContraseniaInput!: string;
-  persona1!: Persona;
+  persona!: Persona;
   personas: Persona[] = [];
+  formRegistro!: FormGroup;
 
-  formRegistro: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
-    this.formRegistro = this.formBuilder.group(
+  constructor(
+    private fb: FormBuilder,
+    private personaServicio: PersonaServicio
+  ) {
+    this.personas = personaServicio.personas;
+  }
+  ngOnInit() {
+    this.formRegistro = this.fb.group(
       {
-        nombres: formBuilder.control('', [Validators.required]),
-        apellidos: formBuilder.control('', [Validators.required]),
-        telefono: formBuilder.control('', [
-          Validators.required,
-          Validators.min(0),
-        ]),
-        nroDni: formBuilder.control('', [
-          Validators.required,
-          Validators.min(0),
-        ]),
-        fechaNacimiento: formBuilder.control('', Validators.required),
-        correo: formBuilder.control('', [
-          Validators.required,
-          Validators.email,
-        ]),
-        contrasenia: formBuilder.control(null, [
-          Validators.required,
-          Validators.minLength(6),
-        ]),
-        cContrasenia: formBuilder.control(null, [Validators.required]),
+        nombres: ['', [Validators.required]],
+        apellidos: ['', [Validators.required]],
+        telefono: ['', [Validators.required, Validators.min(0)]],
+        nroDni: ['', [Validators.required, Validators.min(0)]],
+        fechaNacimiento: ['', [Validators.required]],
+        correo: ['', [Validators.required, Validators.email]],
+        contrasenia: [null, [Validators.required, Validators.minLength(6)]],
+        cContrasenia: [null, [Validators.required]],
       },
       {
         validators: this.MustMatch('contrasenia', 'cContrasenia'),
       }
     );
   }
-  agregarPersona() {
-    if (!this.formRegistro.invalid) {
-      this.persona1 = new Persona(
-        this.nombresInput,
-        this.apellidosInput,
-        this.numeroTelefonoInput,
-        this.numeroDniInput,
-        this.correoInput,
-        this.fechaNacimientoInput,
-        this.contraseniaInput
-      );
-      this.personas.push(this.persona1);
-    }
-  }
+
+  //método para las validaciones respectivas
 
   get f() {
     return this.formRegistro.controls;
   }
 
-  
-  MustMatch(contrasenia1: string, confirmarContrasenia: string) {
+  MustMatch(contrasenia: string, confirmarContrasenia: string) {
     return (formRegistro: FormGroup) => {
-      const control = formRegistro.controls[contrasenia1];
+      const control = formRegistro.controls[contrasenia];
       const machingControl = formRegistro.controls[confirmarContrasenia];
       if (machingControl.errors && !machingControl.errors.MustMatch) {
         return;
@@ -93,22 +69,74 @@ export class RegistroComponent {
       }
     };
   }
+  public control(name: string) {
+    return this.formRegistro.get(name);
+  }
 
+  //métodos que sirven para el registro de las personas
+  private noExisteUsuario(): boolean {
+    let noExisteUsuario: boolean = true;
+    for (let i = 0; i < this.personas.length; i++) {
+      console.log(this.personas[i].correo + '=' + this.correoInput);
+      console.log(this.personas[i].numeroDni + '=' + this.numeroDniInput);
+      if (
+        this.personas[i].correo === this.correoInput ||
+        this.personas[i].numeroDni === this.numeroDniInput
+      ) {
+        noExisteUsuario = false;
+      }
+    }
+    return noExisteUsuario;
+  }
+
+  generarId(): number {
+    let id: number = 0;
+    for (let i = 0; i <= this.personas.length; i++) {
+      id += 1;
+    }
+    return id;
+  }
+
+  registrarPersona() {
+    if (this.formRegistro.valid && this.noExisteUsuario()) {
+      this.persona = new Persona(
+        this.generarId(),
+        this.nombresInput,
+        this.apellidosInput,
+        this.numeroTelefonoInput,
+        this.numeroDniInput,
+        this.correoInput,
+        this.fechaNacimientoInput,
+        this.contraseniaInput
+      );
+      this.personaServicio.personas.push(this.persona);
+      console.log(this.personaServicio.personas.length);
+      this.limpiarFormulario();
+    } else {
+      console.log(this.personaServicio.personas.length);
+    }
+  }
+  //metodo para subir formulario
   public onSubmit() {
-    console.log(this.personas.length);
     this.submitted = true;
     if (this.formRegistro.invalid) {
       return;
     }
   }
-
-  public control(name: string) {
-    return this.formRegistro.get(name);
+  //metodo para refreshear la página
+  refresh(): void {
+    window.location.reload();
   }
 
-  personaRepetida() {
-    for (let i = 0; i < 3; i++) {
-      
-    }
+  //metodo que sirve para limpiar el formulario
+  limpiarFormulario() {
+    this.nombresInput = '';
+    this.apellidosInput = '';
+    this.numeroTelefonoInput = parseInt(' ');
+    this.correoInput = '';
+    this.numeroDniInput = parseInt(' ');
+    this.confimarContraseniaInput = '';
+    this.contraseniaInput = '';
+    this.fechaNacimientoInput = '';
   }
 }

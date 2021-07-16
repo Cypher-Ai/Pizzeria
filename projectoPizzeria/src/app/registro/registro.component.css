@@ -1,3 +1,31 @@
-.err {
-  color: rgb(231, 31, 31);
+.form-group {
+  padding-bottom: 0.8vw;
+  padding-top: 0.8vw;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  position: relative;
+}
+
+.form-control {
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  border: 1px solid;
+  border-color: rgb(20, 224, 44);
+}
+.input-group-text {
+  border: 1px solid;
+  border-color: rgb(20, 224, 44);
+  background-color: rgb(20, 224, 44);
+}
+small {
+  color: rgb(255, 0, 0);
+  font-size: 0.8vw;
+}
+.btn-outline-success {
+  height: 40px;
+  width: 100px;
+  margin: -20px -50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
 }

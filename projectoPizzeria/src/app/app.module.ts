@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PersonaServicio } from './persona.service';
 
 @NgModule({
   declarations: [
@@ -31,10 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [PersonaServicio],
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })

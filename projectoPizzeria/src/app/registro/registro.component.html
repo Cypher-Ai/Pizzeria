@@ -2,7 +2,7 @@
     <div class="starter-template">
         <div class="row">
             <div class="col-md-12 mt-1">
-                <form class="form" [formGroup]="formRegistro" (ngSubmit)="save($event)">
+                <form class="form" [formGroup]="formRegistro" (ngSubmit)="onSubmit()">
                     <table>
                         <tr>
                             <td>
@@ -18,11 +18,11 @@
                                         </span>
 
                                         <input type="text" name="nombres" class="form-control" id="nombresRegistro"
-                                            placeholder="Nombres" formControlName="nombres" [ngModel]="nombresInput"
+                                            placeholder="Nombres" formControlName="nombres" [(ngModel)]="nombresInput"
                                             onkeydown="return /[a-z, ]/i.test(event.key)">
                                     </div>
-                                    <div class="err" *ngIf="submitted && f.nombres.errors">
-                                        <div *ngIf="f.nombres.errors.required">
+                                    <div class="err" *ngIf=" submitted && f.nombres.errors">
+                                        <div *ngIf="f.nombres.errors.required ">
                                             <small>*Nombres
                                                 requeridos</small>
                                         </div>
@@ -41,7 +41,7 @@
                                             </svg>
                                         </span>
                                         <input type="text" name="apellidos" class="form-control" id="apellidosRegistro"
-                                            placeholder="Apellidos" [ngModel]="apellidosInput"
+                                            placeholder="Apellidos" [(ngModel)]="apellidosInput"
                                             onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="apellidos">
 
                                     </div>
@@ -72,7 +72,7 @@
                                         </span>
 
                                         <input type="number" name="telefono" class="form-control" id="telefonoRegistro"
-                                            placeholder="Número de teléfono" [ngModel]="numeroTelefonoInput"
+                                            placeholder="Número de teléfono" [(ngModel)]="numeroTelefonoInput"
                                             formControlName="telefono">
                                     </div>
                                     <div class="err" *ngIf="submitted && f.telefono.errors">
@@ -98,7 +98,7 @@
                                             </svg>
                                         </span>
                                         <input type="number" name="nroDni" class="form-control" id="nroDniRegistro"
-                                            placeholder="Número de DNI" [ngModel]="numeroDniInput"
+                                            placeholder="Número de DNI" [(ngModel)]="numeroDniInput"
                                             formControlName="nroDni">
                                     </div>
                                     <div class="err" *ngIf="submitted && f.nroDni.errors">
@@ -110,9 +110,7 @@
                                             <small>*Nro de DNI
                                                 inválido</small>
                                         </div>
-                                        <div *ngIf="f.nroDni.errors.dniNoValido">
-                                            <small>*Ingrese 8 dígitos</small>
-                                        </div>
+
                                     </div>
 
                                 </div>
@@ -133,7 +131,7 @@
                                             </svg>
                                         </span>
                                         <input type="email" name="correo" class="form-control" id="correoRegistro"
-                                            placeholder="Correo" [ngModel]="correoInput" formControlName="correo">
+                                            placeholder="Correo" [(ngModel)]="correoInput" formControlName="correo">
                                     </div>
                                     <div class="err" *ngIf="submitted && f.correo.errors ">
                                         <div *ngIf="f.correo.errors.required">
@@ -163,7 +161,7 @@
                                         </span>
                                         <input type="date" name="fechaNacimiento" class="form-control"
                                             id="fechaNacimientoRegistro" placeholder="Fecha de Nacimiento"
-                                            [ngModel]="fechaNacimientoInput" formControlName="fechaNacimiento">
+                                            [(ngModel)]="fechaNacimientoInput" formControlName="fechaNacimiento">
                                     </div>
                                     <div class="err" *ngIf="submitted && f.fechaNacimiento.errors">
                                         <div *ngIf="f.fechaNacimiento.errors.required">
@@ -192,7 +190,7 @@
                                         </span>
                                         <input type="password" name="contrasenia" class="form-control"
                                             id="contraseniaRegistro" placeholder="Contraseña"
-                                            [ngModel]="confimarContraseniaInput" formControlName="contrasenia">
+                                            [(ngModel)]="confimarContraseniaInput" formControlName="contrasenia">
                                     </div>
                                     <div class="err" *ngIf="submitted && f.contrasenia.errors">
                                         <div *ngIf="f.contrasenia.errors.required">
@@ -223,7 +221,7 @@
                                         </span>
                                         <input type="password" name="cContrasenia" class="form-control"
                                             id="cContraseniaRegistro" placeholder="Confirmar contraseña"
-                                            [ngModel]="contraseniaInput" formControlName="cContrasenia">
+                                            [(ngModel)]="contraseniaInput" formControlName="cContrasenia">
                                     </div>
 
                                     <div class="err" *ngIf="submitted && f.cContrasenia.errors">
