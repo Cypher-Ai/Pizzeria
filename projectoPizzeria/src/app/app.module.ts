@@ -10,9 +10,9 @@ import { ItemPromocionComponent } from './item-promocion/item-promocion.componen
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LoginComponent } from './login/login.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
+
 import { RegistroComponent } from './registro/registro.component';
-import { RegistroModalComponent } from './registro-modal/registro-modal.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonaServicio } from './persona.service';
 import { CommonModule } from '@angular/common';
@@ -25,9 +25,7 @@ import { CommonModule } from '@angular/common';
     ItemListComponent,
     ItemPromocionComponent,
     LoginComponent,
-    LoginModalComponent,
     RegistroComponent,
-    RegistroModalComponent,
   ],
   imports: [
     CommonModule,

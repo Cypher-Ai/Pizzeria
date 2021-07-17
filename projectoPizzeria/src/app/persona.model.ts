@@ -1,3 +1,5 @@
+import { Pedido } from './pedido.model';
+
 export class Persona {
   constructor(
     public id: number,
@@ -7,6 +9,7 @@ export class Persona {
     public numeroDni: number,
     public correo: string,
     public fechaNacimiento: string,
-    public contrasenia: string
+    public contrasenia: string,
+    public historialPedidos: Pedido[] = []
   ) {}
 }

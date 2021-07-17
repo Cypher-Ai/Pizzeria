@@ -14,11 +14,14 @@ export class LoginComponent {
   contraseniaLoginInput!: string;
   personaLogeada!: Persona;
   personas: Persona[] = [];
+  administradores: Persona[] = [];
+  administradorLogeado!: Persona;
   formLogin: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private personaServicio: PersonaServicio
   ) {
+    this.administradores = personaServicio.administradores;
     this.personas = personaServicio.personas;
     this.formLogin = this.formBuilder.group({
       correo: formBuilder.control('', [Validators.required, Validators.email]),
@@ -28,7 +31,7 @@ export class LoginComponent {
       ]),
     });
   }
-  private existeCuenta() {
+  private cuentaUser() {
     let existeCuenta: boolean = false;
     for (let i = 0; i < this.personas.length; i++) {
       if (
@@ -41,11 +44,28 @@ export class LoginComponent {
     }
     return existeCuenta;
   }
+  private cuentaAdmin() {
+    let existeCuenta: boolean = false;
+    for (let i = 0; i < this.administradores.length; i++) {
+      if (
+        this.administradores[i].correo === this.correoLoginInput &&
+        this.administradores[i].contrasenia === this.contraseniaLoginInput
+      ) {
+        this.administradorLogeado = this.administradores[i];
+        existeCuenta = true;
+      }
+    }
+    return existeCuenta;
+  }
   login() {
-    if (this.formLogin.valid && this.existeCuenta()) {
+    if (this.formLogin.valid && this.cuentaAdmin()) {
+      console.log(this.administradorLogeado.id);
+      console.log('eres el admin');
+    } else if (this.formLogin.valid && this.cuentaUser()) {
       console.log(this.personaLogeada.id);
+      console.log('eres usuario');
     } else {
-      console.log('burro no tienes cuenta');
+      console.log('no tienes cuenta');
     }
   }
 

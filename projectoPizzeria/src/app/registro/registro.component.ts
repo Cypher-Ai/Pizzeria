@@ -107,7 +107,8 @@ export class RegistroComponent implements OnInit {
         this.numeroDniInput,
         this.correoInput,
         this.fechaNacimientoInput,
-        this.contraseniaInput
+        this.contraseniaInput,
+        []
       );
       this.personaServicio.personas.push(this.persona);
       console.log(this.personaServicio.personas.length);
@@ -116,6 +117,7 @@ export class RegistroComponent implements OnInit {
       console.log(this.personaServicio.personas.length);
     }
   }
+
   //metodo para subir formulario
   public onSubmit() {
     this.submitted = true;
