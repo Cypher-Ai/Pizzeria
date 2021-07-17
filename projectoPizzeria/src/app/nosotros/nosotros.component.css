@@ -1,0 +1,15 @@
+.imagen{
+    display:block;
+    margin:auto;
+}
+.titulo{
+    text-align: center;
+}
+
+.slogan{
+    text-align: center;
+}
+
+.texto{
+    text-align: justify;
+}

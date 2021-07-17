@@ -11,6 +11,9 @@ import { ItemPromocionComponent } from './item-promocion/item-promocion.componen
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CarritoItemComponent } from './carrito-item/carrito-item.component';
 import { CarritoListComponent } from './carrito-list/carrito-list.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { LocalesComponent } from './locales/locales.component';
+import { MisionComponent } from './mision/mision.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CarritoListComponent } from './carrito-list/carrito-list.component';
     ItemListComponent,
     ItemPromocionComponent,
     CarritoItemComponent,
-    CarritoListComponent
+    CarritoListComponent,
+    NosotrosComponent,
+    LocalesComponent,
+    MisionComponent,
   ],
   imports: [
     BrowserModule,
