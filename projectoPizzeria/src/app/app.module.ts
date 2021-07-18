@@ -9,13 +9,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './registro-login/login/login.component';
 
-import { RegistroComponent } from './registro/registro.component';
+import { RegistroComponent } from './registro-login/registro/registro.component';
+import { RegistroLoginComponent } from './registro-login/registro-login.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonaServicio } from './persona.service';
 import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { CommonModule } from '@angular/common';
     ItemPromocionComponent,
     LoginComponent,
     RegistroComponent,
+    RegistroLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { CommonModule } from '@angular/common';
     IvyCarouselModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
 
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
