@@ -44,7 +44,16 @@ import { AccountInfoComponent } from './account-info/account-info.component';
     ItemListComponent,
     ItemPromocionComponent,
     CartComponent,
-    AccountInfoComponent
+    AccountInfoComponent,
+    LoginComponent,
+    CarritoItemComponent,
+    CarritoListComponent,
+    NosotrosComponent,
+    LocalesComponent,
+    MisionComponent,
+    RegistroLoginComponent,
+    RegistroComponent,
+    CartItemComponent
   ],
   imports: [
     CommonModule,
