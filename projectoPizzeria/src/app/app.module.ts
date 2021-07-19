@@ -18,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonaServicio } from './persona.service';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DefaultModule } from './layouts/default/default.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    DefaultModule
   ],
 
   exports: [CommonModule, FormsModule, ReactiveFormsModule],

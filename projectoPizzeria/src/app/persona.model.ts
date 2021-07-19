@@ -12,4 +12,8 @@ export class Persona {
     public contrasenia: string,
     public historialPedidos: Pedido[] = []
   ) {}
+  getHistorialPedidos(){
+    return this.historialPedidos;
+  }
+
 }

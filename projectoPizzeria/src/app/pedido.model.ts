@@ -5,6 +5,7 @@ export class Pedido {
     public numeroDePedido: number,
     public listaCarritoCompra: Item[] = [],
     public fechaPedido: string,
-    public horaPedido: string
+    public horaPedido: string,
+    public ubicacion:string
   ) {}
 }
