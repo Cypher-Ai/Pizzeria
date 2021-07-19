@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountInfoComponent } from './account-info/account-info.component';
 import { AppComponent } from './app.component';
 import { CarritoListComponent } from './carrito-list/carrito-list.component';
+import { CartComponent } from './cart/cart.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { LocalesComponent } from './locales/locales.component';
@@ -37,7 +39,11 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CarritoListComponent
+    component: CartComponent
+  },
+  {
+    path: 'account',
+    component: AccountInfoComponent
   }
 ];
 @NgModule({
