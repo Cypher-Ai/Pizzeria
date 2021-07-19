@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { MainComponent } from './main/main.component';
+
+import { HeaderComponent } from './header/header.component';
+import { Header2Component } from './header2/header2.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
@@ -36,12 +39,6 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     AppComponent,
     ItemComponent,
     MainComponent,
-    ItemListComponent,
-    ItemPromocionComponent,
-    LoginComponent,
-    RegistroComponent,
-    RegistroLoginComponent,
-    MainComponent,
     HeaderComponent,
     Header2Component,
     MainComponent,
@@ -54,7 +51,9 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     CarritoListComponent,
     NosotrosComponent,
     LocalesComponent,
-    MisionComponent
+    MisionComponent,
+    HeaderComponent,
+    Header2Component
   ],
   imports: [
     CommonModule,

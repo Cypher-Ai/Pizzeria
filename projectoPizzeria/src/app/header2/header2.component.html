@@ -1,31 +1,36 @@
+
 <header>
-    <div id="nagivator-container" class="navigation-container fixed-top">
-        <ul id="subNavigationReference" class="subnavigation--horizontal container fixed-nav">
-            <li class="active">
-                <button id="botton-1" class="{{estado1}}" (click)="activarBoton1()"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/promociones_1.svg" alt="">
-                 <p>Promociones</p>
-                </button>
-            </li>
-            <li class="">
-                <button id="botton-2" class="{{estado2}}" (click)="activarBoton2()"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Pizzas_1.svg" alt="">
-                    <p>Pizzas</p>
-                </button>
-            </li>
-            <li class="">
-                <button id="botton-3" class="{{estado3}}"(click)="activarBoton3()" ><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Adicionales_1.svg" alt=""> 
-                    <p>Adicionales</p>
-                </button>
-            </li>
-            <li class="">
-                <button id="botton-4" class="{{estado4}}" (click)="activarBoton4()" ><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Bebidas_1.svg" alt="">
-                    <p>Bebidas</p>
-                </button>
-            </li>
-            <li class="">
-                <button id="botton-5" class="{{estado5}}"(click)="activarBoton5()" ><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Extras_1.svg" alt="">
-                    <p>Extras</p>
-                </button>
-            </li><!----></ul>
-    </div>
+    <nav>
+        <div id="nagivator-container" class="{{headerActual}} fixed-top">
+            <ul id="subNavigationReference" class="subnavigation--horizontal container">
+                <li class="active">
+                    <button  id="botton-1" class="{{estado1}}" (click)="activarBoton1()">
+                        <a href="#promociones"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/promociones_1.svg" alt=""></a>
+                        <a id="names"   href="#promociones">Promociones</a>
+                    </button>
+                </li>
+                <li class="">
+                    <button id="botton-2" class="{{estado2}}" (click)="activarBoton2()">
+                        <a href="#pizzas"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Pizzas_1.svg" alt=""></a>
+                        <a id="names" href="#pizzas">Pizzas</a>
+                    </button>
+                </li>
+                
+                <li class="">
+                    <button id="botton-4" class="{{estado4}}" (click)="activarBoton4()">
+                        <a href="#bebidas"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Bebidas_1.svg" alt=""></a>
+                        <a id="names" href="#bebidas">Bebidas</a>
+                    </button>
+                </li>
+                <li class="">
+                    <button id="botton-5" class="{{estado5}}"(click)="activarBoton5()" >
+                        <a href="#extras"><img src="https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/category/Extras_1.svg" alt=""></a>
+                        <a id="names" href="#extras">Extras</a>
+                    </button>
+                </li><!----></ul>
+
+        </div>
+        
+    </nav>
 </header>
 
