@@ -8,4 +8,10 @@ export class Pedido {
     public horaPedido: string,
     public ubicacion:string
   ) {}
+  getTotal(){
+    let total:number=0;
+    this.listaCarritoCompra.forEach(Item => {
+      
+    });
+  }
 }
