@@ -10,8 +10,6 @@ import { Header2Component } from './header2/header2.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
-import { HeaderComponent } from './header/header.component';
-import { Header2Component } from './header2/header2.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LoginComponent } from './registro-login/login/login.component';
@@ -53,7 +51,10 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     LocalesComponent,
     MisionComponent,
     HeaderComponent,
-    Header2Component
+    Header2Component,
+    LoginComponent,
+    RegistroComponent,
+    RegistroLoginComponent
   ],
   imports: [
     CommonModule,
