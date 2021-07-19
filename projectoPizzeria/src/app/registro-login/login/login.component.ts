@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Persona } from '../../persona.model';
 import { PersonaServicio } from '../../persona.service';
+import { Router } from '@angular/router';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,8 @@ import { PersonaServicio } from '../../persona.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  logged: boolean=false;
+  loggedAdmin: boolean=false;
   submitted: boolean = false;
   correoLoginInput!: string;
   contraseniaLoginInput!: string;
@@ -20,7 +24,8 @@ export class LoginComponent {
   formLogin: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private personaServicio: PersonaServicio
+    private personaServicio: PersonaServicio,
+    private router: Router
   ) {
     this.administradores = personaServicio.administradores;
     this.personas = personaServicio.personas;
@@ -76,7 +81,8 @@ export class LoginComponent {
       this.loginVacio();
     }
   }
-
+  
+  
   //mensajes modales :3
   private loginUserCorrecto() {
     Swal.fire(
@@ -84,14 +90,19 @@ export class LoginComponent {
       '🤡Disfruta de tu experiencia🤡',
       'success'
     );
+    this.logged=true;
   }
   private loginAdminCorrecto() {
+    this.loggedAdmin=true;
     Swal.fire(
       '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ \nBienvenido ' + this.administradorLogeado.nombres,
       '🤡Disfruta de tu experiencia🤡',
       'success'
-    );
+    ).then(()=>{
+      
+    })
   }
+  
   private logContraseñaIncorreta() {
     Swal.fire(
       '	(っ˘̩╭╮˘̩)っ \nContraseña incorrecta',

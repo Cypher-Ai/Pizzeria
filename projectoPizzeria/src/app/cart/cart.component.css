@@ -8,3 +8,8 @@
 #totaltitulo{
     margin-right: 1.5vw;
 }
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   }

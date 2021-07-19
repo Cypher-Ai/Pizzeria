@@ -13,6 +13,7 @@ import { MatTableModule} from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -23,11 +24,11 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     CommonModule,
     RouterModule,
     SharedModule,
-    MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
     MatCardModule,
     MatPaginatorModule,
+    MatSidenavModule,
     MatTableModule
   ],
   providers: [

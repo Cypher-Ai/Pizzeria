@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from '../persona.model';
 import { PersonaServicio } from '../persona.service';
-
 @Component({
   selector: 'app-registro-login',
   templateUrl: './registro-login.component.html',

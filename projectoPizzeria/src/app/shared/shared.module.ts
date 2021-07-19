@@ -13,7 +13,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -23,7 +22,6 @@ import { PieComponent } from './widgets/pie/pie.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent,
     SidebarComponent,
     AreaComponent,
     CardComponent,
@@ -43,7 +41,6 @@ import { PieComponent } from './widgets/pie/pie.component';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent,
     SidebarComponent,
     AreaComponent,
     CardComponent,
