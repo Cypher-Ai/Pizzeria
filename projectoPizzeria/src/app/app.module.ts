@@ -12,6 +12,11 @@ import { Header2Component } from './header2/header2.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LoginComponent } from './registro-login/login/login.component';
+import { CarritoItemComponent } from './carrito-item/carrito-item.component';
+import { CarritoListComponent } from './carrito-list/carrito-list.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { LocalesComponent } from './locales/locales.component';
+import { MisionComponent } from './mision/mision.component';
 
 import { RegistroComponent } from './registro-login/registro/registro.component';
 import { RegistroLoginComponent } from './registro-login/registro-login.component';
@@ -44,6 +49,12 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     ItemPromocionComponent,
     CartComponent,
     CartItemComponent
+    ItemPromocionComponent,
+    CarritoItemComponent,
+    CarritoListComponent,
+    NosotrosComponent,
+    LocalesComponent,
+    MisionComponent,
   ],
   imports: [
     CommonModule,

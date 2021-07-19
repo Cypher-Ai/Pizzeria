@@ -1,0 +1,65 @@
+<body>
+    <div class="album py-5 bg-light">
+      <div class="container" alt="max-width: 100%">
+        <h1><b>Carrito</b></h1>
+        <div class="card mb-2" alt="max-width: 100%">
+          <div class="row g-0">
+            <div class="col-md">
+              <div class="card-body">
+                <h5 class="card-title"><b>Producto</b></h5>
+              </div>              
+            </div>
+            <div class="col-md">
+              <div class="card-body">
+                <h5 id="pu" class="card-title"><b>Precio Unitario</b></h5>
+              </div>                
+            </div>
+            <div class="col-md">
+              <div class="card-body">
+                <h5 id="cantidad" class="card-title"><b>Cantidad</b></h5>
+              </div>                
+            </div>
+            <div class="col-md">
+              <div class="card-body">
+                <h5 id="subtotal" class="card-title"><b>Subtotal</b></h5>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="card-body">
+                <h5 id="subtotal" class="card-title"><b></b></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" *ngFor="let item of carritoitems">
+              <app-carrito-item [carritoItem]="item"></app-carrito-item>
+            </div>        
+        </div>
+        <div class="card mb-0" alt="max-width: 50%">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <div class="card-body">
+                <h5 id="totaltitulo" class="card-title"><b>TOTAL</b></h5>
+              </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+              <div class="card-body">
+                <h5 id="total" class="card-title">S/ 00.00</h5>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card-body">
+                <button id="boton" type="button" class="btn btn-success">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+</body>
+

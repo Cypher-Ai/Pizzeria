@@ -25,5 +25,4 @@ export class ItemListComponent{
     this.extras=this.ItemService.getExtras();
     this.bebidas=this.ItemService.getbebidas();
   }
-  
 }
