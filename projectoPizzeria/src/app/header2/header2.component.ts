@@ -62,7 +62,7 @@ export class Header2Component {
   headerActual:string="header";
   @HostListener("document:scroll")
   scrollfunction(){
-    if(document.body.scrollTop>0 || document.documentElement.scrollTop >0){
+    if(document.body.scrollTop>0|| document.documentElement.scrollTop >0){
       this.headerActual="header2"
     }else{
       this.headerActual="header"

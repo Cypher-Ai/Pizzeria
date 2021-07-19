@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './registro-login/login/login.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LocalesComponent } from './locales/locales.component';
@@ -41,6 +42,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     Header2Component,
     MainComponent,
     ItemListComponent,
+    FooterComponent,
     ItemPromocionComponent,
     CartComponent,
     AccountInfoComponent,
