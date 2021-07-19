@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     Header2Component,
     MainComponent,
     ItemListComponent,
-    ItemPromocionComponent
+    ItemPromocionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
