@@ -22,6 +22,7 @@
     "@fortawesome/angular-fontawesome": "^0.9.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@sweetalert2/themes": "^5.0.1",
     "angular-responsive-carousel": "^2.1.2",
     "bootstrap": "^5.0.1",
     "jquery": "^3.6.0",
