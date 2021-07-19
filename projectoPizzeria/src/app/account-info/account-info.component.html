@@ -28,7 +28,7 @@
 
                 <div class="card-body">
                     <!--Name-->
-                    <h4 style="text-align: center;" class="card-title mt-1">Bienvenido, "Nombres y Apellidos del usuario"</h4>
+                    <h4 style="text-align: center;" class="card-title mt-1">Bienvenido, {{usuarioLogeado.nombres}} {{usuarioLogeado.apellidos}}</h4>
                     <hr style="margin: 10px;">
                     <!--Quotation-->
                     <p style = "text-align: center; margin-top: 15px; margin-bottom: 0px" >Gestiona tu información, la privacidad y la seguridad para mejorar tu experiencia en "Nombre de la pizzería"</p>
@@ -45,7 +45,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">Nombre: </div>
-                                    <div class="col-md-6">Nombre del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.nombres}}</div>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">Fecha de nacimiento: </div>
-                                    <div class="col-md-6">Fecha de nacimiento del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.fechaNacimiento}}</div>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">DNI: </div>
-                                    <div class="col-md-6">Número de DNI del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.numeroDni}}</div>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">Contraseña: </div>
-                                    <div class="col-md-6">Contraseña del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.contrasenia}}</div>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">Correo: </div>
-                                    <div class="col-md-6">Correo del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.correo}}</div>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                             <div style="margin: 20px;">
                                 <div class="row g-0">
                                     <div class="col-md-2">Teléfono: </div>
-                                    <div class="col-md-6">Teléfono del usuario</div>
+                                    <div class="col-md-6">{{usuarioLogeado.numeroTelefono}}</div>
                                 </div>
                             </div>
                         </div>

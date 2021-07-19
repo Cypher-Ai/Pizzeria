@@ -27,10 +27,12 @@
               <a class="nav-link" data-bs-toggle="modal" routerLink="/mision" role="button">Mision</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="modal" routerLink="/account" role="button">Mi cuenta</a> 
+              <a *ngIf="!logged" class="nav-link" data-bs-toggle="modal" href="#loginCliente" role="button">Mi cuenta</a>
+              <a *ngIf="logged" class="nav-link" data-bs-toggle="modal" routerLink="/account" role="button">Mi cuenta</a> 
             </li>
             <li id="li-registrate" class="nav-item">
-                <a class="nav-link" data-bs-toggle="modal" href="#loginCliente" role="button">Login</a>
+                <a *ngIf="!logged" class="nav-link" data-bs-toggle="modal" href="#loginCliente" role="button">Login</a>
+                <a *ngIf="logged" class="nav-link" data-bs-toggle="modal" role="button" (click)="logOut()">{{usuarioLogeado.nombres}} {{usuarioLogeado.apellidos}}</a>
               </li>
             <li id="li-carrito" class="nav-item">
                 <button type="button" class="btn" routerLink="/cart">

@@ -8,6 +8,8 @@ import { PersonaServicio } from '../persona.service';
   styleUrls: ['./registro-login.component.css'],
 })
 export class RegistroLoginComponent implements OnInit {
+  
+
   personas: Persona[] = [];
   constructor(
     private personaServicio: PersonaServicio,

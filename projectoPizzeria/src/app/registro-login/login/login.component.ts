@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Persona } from '../../persona.model';
 import { PersonaServicio } from '../../persona.service';
 import { Router } from '@angular/router';
-import { timeout } from 'q';
 
+declare var jQuery: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -64,6 +64,8 @@ export class LoginComponent {
       if (adminLogin.tipoError === 'noHayErrorLogAdmin') {
         this.administradorLogeado = adminLogin.admin;
         this.loginAdminCorrecto();
+        this.limpiarFom();
+        this.cerrarModal();
       } else if (
         adminLogin.tipoError === 'noTieneCuentaAdmin' &&
         userLogin.tipoError === 'noTieneCuenta'
@@ -74,6 +76,7 @@ export class LoginComponent {
       } else if (userLogin.tipoError === 'noHayError') {
         this.usuarioLogeado = userLogin.user;
         this.loginUserCorrecto();
+        this.cerrarModal();
       } else if (userLogin.tipoError === 'contraseniaIncorrecta') {
         this.logContraseñaIncorreta();
       }
@@ -81,28 +84,38 @@ export class LoginComponent {
       this.loginVacio();
     }
   }
-  
-  
+
   //mensajes modales :3
   private loginUserCorrecto() {
     Swal.fire(
       '	(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧\nBienvenido ' + this.usuarioLogeado.nombres,
       '🤡Disfruta de tu experiencia🤡',
       'success'
-    );
-    this.logged=true;
+    ).then(()=>{
+      this.logged=true;
+      this.router.navigateByUrl('/account');
+      this.personaServicio.usuarioLogeado=this.usuarioLogeado;
+      this.personaServicio.logged=this.logged;
+      this.personaServicio.loggedAdmin=this.loggedAdmin;
+      console.log("Usuario Logeado "+this.usuarioLogeado.nombres)
+      console.log("Usuario Enviado "+ this.personaServicio.usuarioLogeado.nombres);
+    });    
   }
   private loginAdminCorrecto() {
-    this.loggedAdmin=true;
     Swal.fire(
       '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ \nBienvenido ' + this.administradorLogeado.nombres,
       '🤡Disfruta de tu experiencia🤡',
       'success'
     ).then(()=>{
-      
-    })
+      this.loggedAdmin=true;
+      this.router.navigateByUrl('/admin');
+      this.personaServicio.usuarioLogeado=this.administradorLogeado;
+      this.personaServicio.logged=this.logged;
+      this.personaServicio.loggedAdmin=this.loggedAdmin;
+      console.log("Usuario Logeado "+this.administradorLogeado)
+      console.log("Usuario Enviado "+ this.personaServicio.usuarioLogeado);
+    });
   }
-  
   private logContraseñaIncorreta() {
     Swal.fire(
       '	(っ˘̩╭╮˘̩)っ \nContraseña incorrecta',
@@ -130,5 +143,12 @@ export class LoginComponent {
         no-repeat
       `,
     });
+  }
+  cerrarModal() {
+    jQuery('#loginCliente').modal('hide');
+  }
+  //metodo para limpiar el formulario
+  private limpiarFom() {
+    this.formLogin.reset();
   }
 }

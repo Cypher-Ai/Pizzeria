@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart-item/cart.service';
 import { HistorialItem } from '../models/historial-item';
+import { Persona } from '../persona.model';
+import { PersonaServicio } from '../persona.service';
 
 @Component({
   selector: 'app-account-info',
@@ -8,11 +10,13 @@ import { HistorialItem } from '../models/historial-item';
   styleUrls: ['./account-info.component.css']
 })
 export class AccountInfoComponent implements OnInit {
+  usuarioLogeado!: Persona;
   cartItems_h: HistorialItem[] = [];
   historialItem!: HistorialItem;
-  constructor(private msj: CartService) { }
+  constructor(private msj: CartService, private personaServicio:PersonaServicio) { }
 
   ngOnInit(): void {
+    this.usuarioLogeado=this.personaServicio.usuarioLogeado;
     this.msj.recibirDatos_shoppingcart().subscribe(
       (item: any) => {
         console.log(item)

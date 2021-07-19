@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-
 import { Persona } from '../../persona.model';
 import { PersonaServicio } from '../../persona.service';
-
+declare var jQuery: any;
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -44,9 +43,7 @@ export class RegistroComponent implements OnInit {
           null,
           [
             Validators.required,
-            Validators.pattern(
-              '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
-            ),
+            Validators.pattern('(?=.*[a-z])(?=.*[0-9])[a-zd].{8,}'),
           ],
         ],
         cContrasenia: [null, [Validators.required]],
@@ -106,6 +103,8 @@ export class RegistroComponent implements OnInit {
         this.personaServicio.personas.push(this.persona);
         //limpiamos el formulario
         this.limpiarFom();
+        //cerramos modal
+        this.cerrarModal();
       } else if (
         this.personaServicio.correoRegistradoAnteriormente(this.persona)
       ) {
@@ -178,5 +177,9 @@ export class RegistroComponent implements OnInit {
       '¿Ingresaste bien tu número de DNI?\n 🤡Intenta nuevamente🤡',
       'warning'
     );
+  }
+  //Para cuando el registro sea terminado
+  private cerrarModal() {
+    jQuery('#registroDatosCliente').modal('hide');
   }
 }

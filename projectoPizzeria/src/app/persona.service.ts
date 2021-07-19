@@ -3,6 +3,9 @@ import { Pedido } from './pedido.model';
 import { Persona } from './persona.model';
 
 export class PersonaServicio {
+  usuarioLogeado!: Persona;
+  logged!:boolean;
+  loggedAdmin!:boolean;
   personas: Persona[] = [
     new Persona(
       1,

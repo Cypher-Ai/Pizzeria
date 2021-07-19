@@ -18,6 +18,10 @@ const routes: Routes = [
     component: ItemListComponent
   },
   {
+    path: 'menu',
+    component: ItemListComponent
+  },
+  {
     path: 'admin',
     component: DefaultComponent,
     children: [{
