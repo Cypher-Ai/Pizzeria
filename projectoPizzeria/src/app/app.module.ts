@@ -15,6 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 
 import { FormsModule } from '@angular/forms';
+import { AccountInfoComponent } from './account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     ItemListComponent,
     ItemPromocionComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,
