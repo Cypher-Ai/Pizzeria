@@ -1,45 +1,30 @@
-.navigation-container .subnavigation--horizontal{
+
+
+.subnavigation--horizontal{
     display: grid;
-    grid-template-columns: repeat(5,auto);
+    grid-template-columns: repeat(4,auto);
     z-index: 10;
         
 }
-.navigation-container{
+
+.header{
+    margin-top: 33vw;
     padding: left 5vw;
     margin-left: 23vw;
-    margin-top: 10vw;
+    max-width: 52vw;
     
 }
-.navigation-container .subnavigation--horizontal{
+
+.subnavigation--horizontal{
     font-family: "SourceSansPro-Black"!important;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 30%);
     background-color: #fff;
     list-style-type: none;
     overflow-x: auto;
-     
-        
-}
-img{
-    width: 25px;
-}
-.fixed-nav {
-    bottom: 0!important;
-    width: 50vw!important;
-    margin: 0!important;
-    border-radius: 0!important;
-    position: relative!important;
     
 }
+ 
 
-.container{
-    max-width: 60vw;
-    
-}
-
-*{
-    box-sizing: border-box;
-    
-}
 ul{
     margin-block-start:1em;
     margin-block-end: 1em;
@@ -47,8 +32,12 @@ ul{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
     height: 2.8vw;
+    margin-top: 0px;
     
 }
+
+
+
 li{
     display: list-item;
     text-align: -webkit-match-parent;
@@ -56,10 +45,10 @@ li{
     padding: 0px;
     
 }
-.navigation-container .subnavigation--horizontal button {
+.subnavigation--horizontal button {
     padding: 0 0;
     font-family: 'Franklin Gothic Medium';
-    font-size: 1 vw;
+    font-size: 1vw;
     color: #606060;
     height: 100%;
     display: flex;
@@ -70,7 +59,7 @@ li{
     outline: 0;
     cursor: pointer;
     text-align: center;
-    width: 5vw;
+    width: 6vw;
     white-space: nowrap;
     
 }
@@ -90,22 +79,48 @@ button{
 
 
 }
-.navigation-container .subnavigation--horizontal button.active{
+.subnavigation--horizontal button.active{
     border-radius: 0;
     border: none;
     border-bottom:3px solid #00795b!important;
-    color: #da2308;   
+    color: #da2308;
     
 }
 
-.navigation-container .subnavigation--horizontal button img {
+.subnavigation--horizontal button img {
     display: block;
     width: 1.6vw;
     height: 1.6vw;
     margin-right: 0.2vw;
+}
+
+button:hover{
+    border-radius: 0;
+    border: none;
+    border-bottom:3px solid #00795b!important;
+    color: #da2308;   
+}
+p{
+    margin: 0%;
     
+}
+#names{
+    text-decoration: none;
+    color: #da2308;
+    
+}
+
+/*
+css para el efecto de header dinamico
+*/
+.header2{
+    margin-top: 0px;
+    padding: left 5vw;
+    margin-left: 23vw;
+    max-width: 52vw;
 
 }
+
 
 
 

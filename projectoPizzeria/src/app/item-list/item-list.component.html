@@ -22,15 +22,15 @@
       >
       </carousel>
     </div>
-    <div class="container">
-      <h1><b>Nuestras promociones del dia</b></h1>
+    <div id="promociones" class="container">
+      <h1><p class="promociones">Nuestras promociones del día</p></h1>
       <div class="row">
         <div class="col-xs-1 col-md-6" *ngFor="let promocion of promociones">
           <app-item-promocion [promocionItem]="promocion"></app-item-promocion>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="pizzas" class="container">
       <h1><b>Nuestras deliciosas pizzas</b></h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let item of items">
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="extras" class="container">
       <h1><b>Extras: </b></h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let extra of extras">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="bebidas" class="container">
       <h1><b>Bebidas: </b></h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let bebida of bebidas">

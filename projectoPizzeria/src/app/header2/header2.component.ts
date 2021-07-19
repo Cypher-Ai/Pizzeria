@@ -1,5 +1,5 @@
 import { stringify } from '@angular/compiler/src/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header2',
@@ -58,5 +58,24 @@ export class Header2Component {
     this.estado4=""
     this.estado3=""   
   }
+
+  headerActual:string="header";
+  @HostListener("document:scroll")
+  scrollfunction(){
+    if(document.body.scrollTop>0 || document.documentElement.scrollTop >0){
+      this.headerActual="header2"
+    }else{
+      this.headerActual="header"
+    }
+  }
+  
+
+  
+
+  
+
+  
+
+
 
 }

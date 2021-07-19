@@ -1,0 +1,18 @@
+div{
+    position: relative;
+}
+
+.uno {
+    z-index: 2
+
+}
+
+.dos {
+    z-index: 3;
+
+}
+
+.tres {
+    z-index: 1;
+
+}
