@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-  </head>
+</head>
 
-  <body>
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <carousel [images]="banners" [height]="500" [cellWidth]="'100%'" [autoplay]="true" [dots]="true" [loop]="true">
-        </carousel>
-      </div>
-      <div class="container">
-        <h1><b>Nuestras promociones del dia</b></h1>
-        <div class="row">
-          <div class="col-md-6" *ngFor="let promocion of promociones">
-            <app-item-promocion [promocionItem]="promocion"></app-item-promocion>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <h1><b>Nuestras deliciosas pizzas</b></h1>
-        <div class="row">
-          <div class="col-md-4" *ngFor="let item of items">
-            <app-item [productItem]="item"></app-item>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <h1><b>Extras: </b></h1>
-        <div class="row">
-          <div class="col-md-4" *ngFor="let extra of extras">
-            <app-item [productItem]="extra"></app-item>
-          </div>
+<body>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <carousel
+      [images]="banners"
+      [height]="500"
+      [cellWidth]="'100%'"
+      [autoplay]="true"
+      [dots]="true"
+      [loop]="true"
+      >
+      </carousel>
+    </div>
+    <div class="container">
+      <h1><b>Nuestras promociones del dia</b></h1>
+      <div class="row">
+        <div class="col-xs-1 col-md-6" *ngFor="let promocion of promociones">
+          <app-item-promocion [promocionItem]="promocion"></app-item-promocion>
         </div>
       </div>
     </div>
-  </body>
+    <div class="container">
+      <h1><b>Nuestras deliciosas pizzas</b></h1>
+      <div class="row">
+        <div class="col-xs-1 col-md-4" *ngFor="let item of items">
+          <app-item [productItem]="item"></app-item>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1><b>Extras: </b></h1>
+      <div class="row">
+        <div class="col-xs-1 col-md-4" *ngFor="let extra of extras">
+          <app-item [productItem]="extra"></app-item>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1><b>Bebidas: </b></h1>
+      <div class="row">
+        <div class="col-xs-1 col-md-4" *ngFor="let bebida of bebidas">
+          <app-item [productItem]="bebida"></app-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
 </html>
