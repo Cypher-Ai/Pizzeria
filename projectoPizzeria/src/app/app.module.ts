@@ -48,13 +48,13 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     ItemListComponent,
     ItemPromocionComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
     ItemPromocionComponent,
     CarritoItemComponent,
     CarritoListComponent,
     NosotrosComponent,
     LocalesComponent,
-    MisionComponent,
+    MisionComponent
   ],
   imports: [
     CommonModule,
