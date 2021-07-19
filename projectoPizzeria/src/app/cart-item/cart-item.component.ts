@@ -25,7 +25,9 @@ export class CartItemComponent implements OnInit {
 
 
   }
-
+  calcularTotal(){
+    return this.cartItem.cantidad*this.cartItem.precio;
+  }
   
 
 }
