@@ -30,6 +30,7 @@ import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component'
 
 import { AccountInfoComponent } from './account-info/account-info.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { AccountInfoComponent } from './account-info/account-info.component';
     BrowserModule,
     FontAwesomeModule,
     IvyCarouselModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
 
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
