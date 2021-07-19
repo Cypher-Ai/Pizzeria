@@ -13,8 +13,6 @@ import { ItemPromocionComponent } from './item-promocion/item-promocion.componen
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { LoginComponent } from './registro-login/login/login.component';
-import { CarritoItemComponent } from './carrito-item/carrito-item.component';
-import { CarritoListComponent } from './carrito-list/carrito-list.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { LocalesComponent } from './locales/locales.component';
 import { MisionComponent } from './mision/mision.component';
@@ -46,8 +44,6 @@ import { AccountInfoComponent } from './account-info/account-info.component';
     CartComponent,
     AccountInfoComponent,
     LoginComponent,
-    CarritoItemComponent,
-    CarritoListComponent,
     NosotrosComponent,
     LocalesComponent,
     MisionComponent,
