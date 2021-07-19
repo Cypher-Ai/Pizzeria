@@ -11,7 +11,6 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemPromocionComponent } from './item-promocion/item-promocion.component';
 
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './registro-login/login/login.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
@@ -58,7 +57,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     BrowserModule,
     FontAwesomeModule,
-    IvyCarouselModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -66,7 +64,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DefaultModule,
     BrowserModule,
     FontAwesomeModule,
-    IvyCarouselModule,
     FormsModule,
     NgbModule
   ],
