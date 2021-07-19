@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="album py-5 bg-light">
+        <div class="container" alt="max-width: 100%">
+            <div class="card profile-card">
+
+                <!--Background color-->
+                <div class="card-up teal lighten-2">
+                </div>
+
+                <!--Avatar-->
+                <div class="avatar mx-auto white">
+                    <img style = "width:150px; height:150px; margin-top: 25px;" src="https://elchino.pe/wp-content/uploads/2020/04/9.1-cuadrada-1.jpg" alt="avatar mx-auto white" class="rounded-circle img-fluid">
+                </div>
+
+                <div class="card-body">
+                    <!--Name-->
+                    <h4 style="text-align: center;" class="card-title mt-1">Bienvenido, "Nombres y Apellidos del usuario"</h4>
+                    <hr style="margin: 10px;">
+                    <!--Quotation-->
+                    <p style = "text-align: center; margin-top: 15px; margin-bottom: 0px" >Gestiona tu información, la privacidad y la seguridad para mejorar tu experiencia en "Nombre de la pizzería"</p>
+                </div>
+
+            </div>
+            
+            <div style="margin: 15px;"></div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Información básica</h4>
+                    <div>
+                        <div style="margin: 15px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">Nombre: </div>
+                                    <div class="col-md-6">Nombre del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 10px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">Fecha de nacimiento: </div>
+                                    <div class="col-md-6">Fecha de nacimiento del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 10px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">DNI: </div>
+                                    <div class="col-md-6">Número de DNI del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 10px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">Contraseña: </div>
+                                    <div class="col-md-6">Contraseña del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin: 15px;"></div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Información de contato</h4>
+                    <div>
+                        <div style="margin: 15px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">Correo: </div>
+                                    <div class="col-md-6">Correo del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 10px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div class="row g-0">
+                                    <div class="col-md-2">Teléfono: </div>
+                                    <div class="col-md-6">Teléfono del usuario</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin: 15px;"></div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Historial de pedidos: </h4>
+                    <div>
+                        <div style="margin: 15px 0px 10px 0px;">
+                            <div style="margin: 20px;">
+                                <div>
+                                    <div *ngFor="let item of cartItems_h let i=index">
+                                        {{item.id}}: {{item.itemsH[0].nombre}}  ----> fecha: {{item.fecha}}
+                                        
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    
+</body>
+
+
+</html>

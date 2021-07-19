@@ -31,6 +31,7 @@ import { DefaultModule } from './layouts/default/default.module';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component'
 
+import { AccountInfoComponent } from './account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -43,18 +44,7 @@ import { CartItemComponent } from './cart-item/cart-item.component'
     ItemListComponent,
     ItemPromocionComponent,
     CartComponent,
-    CartItemComponent,
-    ItemPromocionComponent,
-    CarritoItemComponent,
-    CarritoListComponent,
-    NosotrosComponent,
-    LocalesComponent,
-    MisionComponent,
-    HeaderComponent,
-    Header2Component,
-    LoginComponent,
-    RegistroComponent,
-    RegistroLoginComponent
+    AccountInfoComponent
   ],
   imports: [
     CommonModule,
