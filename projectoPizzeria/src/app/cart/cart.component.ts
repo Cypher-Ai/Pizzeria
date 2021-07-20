@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
-
+import { DashboardService } from '../modules/dashboard.service';
+import { DatePipe } from '@angular/common';
+import { PedidoData } from '../models/pedido-data';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,7 +11,7 @@ import { CartItem } from '../models/cart-item';
 })
 export class CartComponent implements OnInit {
   cartItems: any[] =[];
-  
+  id: number=0;
     // Ejemplos con los que se puede llenar la lista
     // { id: 1, nombre: 'Pizza 1', detalles: '', precio: 0, cantidad: 1, imgUrl: '' },
     // { id:2, nombre:"Pizza 2", detalles:"", precio:10, cantidad:2, imgUrl:"" },
@@ -18,7 +20,7 @@ export class CartComponent implements OnInit {
   @Input() cartTotal = 0;
   
   
-  constructor(private msj: CartService) { }
+  constructor(private msj: CartService, private dashboardService: DashboardService, private datePipe: DatePipe) { }
   ngOnInit(): void {
 
     
@@ -85,9 +87,19 @@ export class CartComponent implements OnInit {
   enviarLista(){
     if (this.cartItems.length != 0){
       // tslint:disable-next-line: forin
-      this.msj.enviarDatos_shoppingcart(this.cartItems);
       
-
+      this.msj.enviarDatos_shoppingcart(this.cartItems);
+      let fecha=new Date();
+      let newFecha=this.datePipe.transform(fecha, 'dd-MM-yyyy');
+      let hora=this.datePipe.transform(fecha, 'shortTime');
+      if(newFecha != null && hora!=null){
+        let pedidoData=new PedidoData(this.id,this.cartTotal,newFecha.toString(),hora.toString(),"Esto tiene que cambiarse");
+        this.dashboardService.lstPedidos.push(pedidoData);
+        console.log("Mensaje enviado "+pedidoData.total);
+      }else{
+        console.log("xdn't")
+      }       
+      
     } else {
       console.log("xd")
     }

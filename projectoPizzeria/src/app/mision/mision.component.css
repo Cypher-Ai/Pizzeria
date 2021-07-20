@@ -1,3 +1,14 @@
+*{
+    font-family: "Rockwell";
+    font-size: 15px;
+}
+h1{
+    font-family: "Rockwell";
+}
+h2{
+    font-family: "Rockwell";
+}
+
 .titulo{
     text-align: center;
     margin-bottom: 80px;

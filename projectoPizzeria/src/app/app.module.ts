@@ -32,6 +32,7 @@ import { CartItemComponent } from './cart-item/cart-item.component'
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
 
   exports: [CommonModule, FormsModule, ReactiveFormsModule],
-  providers: [PersonaServicio],
+  providers: [PersonaServicio, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

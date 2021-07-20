@@ -81,6 +81,7 @@ export class ItemService {
     new Item(8, "Inca Kola 500 mL sin Azucar","Inca Kola sin Azucar",
     [2.5],["Personal"], "https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/product/i/k/ik-500-770px-x-488px_2.webp"),
   ]
+
   constructor() { }
 
   getItems(): Item[]{

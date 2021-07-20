@@ -23,20 +23,22 @@ export class AreaComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Random DATA'
-      },
-      subtitle: {
-        text: 'Demo'
+        text: 'Ventas por producto'
       },
       tooltip: {
         split: true,
-        valueSuffix: ' millions'
+        valueSuffix: ' unidades'
       },
       credits: {
         enabled: false
       },
       exporting: {
         enabled: true,
+      },
+      yAxis:{
+        title:{
+          text: 'Unidades vendidas'
+        }
       },
       series: this.data
     };

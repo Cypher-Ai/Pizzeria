@@ -17,15 +17,7 @@
             <li id="li-menu" class="nav-item active">
               <a class="nav-link" data-bs-toggle="modal" routerLink="/" role="button">Menú</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="modal" routerLink="/locales" role="button">Locales</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="modal" routerLink="/about" role="button">Acerca de Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="modal" routerLink="/mision" role="button">Mision</a>
-            </li>
+            
             <li class="nav-item">
               <a *ngIf="!logged" class="nav-link" data-bs-toggle="modal" href="#loginCliente" role="button">Mi cuenta</a>
               <a *ngIf="logged" class="nav-link" data-bs-toggle="modal" routerLink="/account" role="button">Mi cuenta</a> 
