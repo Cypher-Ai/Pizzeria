@@ -41,9 +41,9 @@ const routes: Routes = [
     component: LocalesComponent
   },
   //{
-   // //path: 'cart',
-   // component: CartComponent
-  //},//
+  //  path: 'cart',
+  //  component: CartComponent
+  //},
   {
     path: 'account',
     component: AccountInfoComponent
