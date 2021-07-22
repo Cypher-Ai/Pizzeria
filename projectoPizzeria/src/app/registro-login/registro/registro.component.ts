@@ -157,6 +157,7 @@ export class RegistroComponent implements OnInit {
       `,
     });
   }
+  //Regsitrado? por si acaso
   private correoYaRegsitrado() {
     Swal.fire(
       'Tu correo ya ha sido registrado anteriormente!!! つ ◕_◕ ༽つ',

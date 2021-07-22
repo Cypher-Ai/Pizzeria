@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart-item/cart.service';
+
 import { HistorialItem } from '../models/historial-item';
 import { Persona } from '../persona.model';
 import { PersonaServicio } from '../persona.service';
@@ -11,20 +12,44 @@ import { PersonaServicio } from '../persona.service';
 })
 export class AccountInfoComponent implements OnInit {
   usuarioLogeado!: Persona;
-  cartItems_h: HistorialItem[] = [];
-  historialItem!: HistorialItem;
+
+  HistorialItems: any[] = this.cargarHistorial();
   constructor(private msj: CartService, private personaServicio:PersonaServicio) { }
 
   ngOnInit(): void {
+    
     this.usuarioLogeado=this.personaServicio.usuarioLogeado;
-    this.msj.recibirDatos_shoppingcart().subscribe(
+
+  }
+  cargarHistorial(){
+    console.log("Historial cargado con éxito")
+    /*this.msg.recibirHistorial2().subscribe(
+      (item: any)=>{
+
+        this.HistorialItems = item;
+
+        console.log("El historial fue recibido con éxito")
+
+        console.log(item)
+      }
+    )*/
+    console.log(this.HistorialItems)
+    return this.HistorialItems;
+  }
+  Refrescar(){
+    this.cargarHistorial();
+  }
+  cartItems_h: any[] = [];
+  historialItem!: HistorialItem;
+
+    /*this.msj.recibirDatos_shoppingcart().subscribe(
       (item: any) => {
         console.log(item)
         this.generarItemHistorial(item);
       },
       
-    );
-  }
+    );*/
+  
   
   id = 0;
   fecha = "1";
@@ -38,7 +63,12 @@ export class AccountInfoComponent implements OnInit {
       this.historialItem.itemsH.push(item[i]);
     }
     this.cartItems_h.push(this.historialItem);
-    console.log(this.cartItems_h[0].itemsH[0].nombre)
+    
   }
 
+  enviarHistorial(){
+    console.log("Ahora sí envía el historial")
+    //this.msg.enviarHistorial2(this.cartItems_h);
+    console.log(this.historialItem)
+  }
 }

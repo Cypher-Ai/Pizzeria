@@ -4,6 +4,11 @@ import { CartItem } from '../models/cart-item';
 import { DashboardService } from '../modules/dashboard.service';
 import { DatePipe } from '@angular/common';
 import { PedidoData } from '../models/pedido-data';
+import { Persona } from '../persona.model';
+import { PersonaServicio } from '../persona.service';
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,24 +16,55 @@ import { PedidoData } from '../models/pedido-data';
 })
 export class CartComponent implements OnInit {
   cartItems: any[] =[];
+  cartItems_historial: any[]=[];
+
   id: number=0;
     // Ejemplos con los que se puede llenar la lista
     // { id: 1, nombre: 'Pizza 1', detalles: '', precio: 0, cantidad: 1, imgUrl: '' },
     // { id:2, nombre:"Pizza 2", detalles:"", precio:10, cantidad:2, imgUrl:"" },
     // { id:3, nombre:"Pizza 3", detalles:"", precio:15, cantidad:1, imgUrl:"" },
     // { id:4, nombre:"Pizza 4", detalles:"", precio:20, cantidad:1, imgUrl:"" }
-  @Input() cartTotal = 0;
+  cartTotal = 0;
+  usuarioLogeado!: Persona;
+  logged!:boolean;
   
-  
-  constructor(private msj: CartService, private dashboardService: DashboardService, private datePipe: DatePipe) { }
+  constructor(private msj: CartService,
+              private dashboardService: DashboardService,
+              private datePipe: DatePipe,
+              private personaServicio: PersonaServicio,
+      ) { }
   ngOnInit(): void {
+    console.log("xd?")
+    //Carga el precio Total que se muestra al lado del icono, específicamente lo carga ni bien inicia el componente
+    //Resuelve el error de que siempre inicie con 00.00
+    this.msj.receiveSignal().subscribe(
+      () => {
+      // tslint:disable-next-line: no-unused-expression
+      this.enviarIconoCartTotal();
+      },
+      
+    );
+    /*this.msg.recibirSeñal().subscribe(
+      () => {
+      // tslint:disable-next-line: no-unused-expression
+      this.enviarHistorial();
+      },
+      
+    );*/
 
-    
+    this.usuarioLogeado=this.personaServicio.usuarioLogeado;
+    this.logged=this.personaServicio.logged;
+    //Se limpian los elementos del carrito si es que el usuario no está logueado
+    if(this.logged == false){
+      this.vaciarCarrito();
+    }
+    console.log(this.logged);
+
     this.msj.recibirDatos().subscribe(
       (item: any) => {
       // tslint:disable-next-line: no-unused-expression
       this.addProductToCart(item);
-      console.log(this.cartItems)
+      console.log(this.cartTotal)
       },
       
     );
@@ -38,10 +74,21 @@ export class CartComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       
       this.removeProductTocart(this.cartItems, item_remove);
+      this.removeProductTocart(this.cartItems_historial, item_remove);
       console.log(this.cartItems)
       },
       
     );
+    
+    this.msj.recibirDatos_Eliminarlista().subscribe(
+      () => {
+      // tslint:disable-next-line: no-unused-expression
+      this.vaciarCarrito();
+      console.log("Ya no hay elementos en el carrito")
+      },
+      
+    );
+
   }
 
   // tslint:disable-next-line: typedef
@@ -103,7 +150,49 @@ export class CartComponent implements OnInit {
     } else {
       console.log("xd")
     }
+    
+  }
 
+  vaciarCarrito(){
+    this.cartItems = [];
+  }
+
+  enviarIconoCartTotal(){
+    this.msj.enviarDatos_icono(this.cartTotal);
+    console.log("El total del Carrito es: " + this.cartTotal)
+  }
+  
+  enviarHistorial(){
+    console.log("Se envía el historial")
+    //this.msg.enviarHistorial(this.cartItems_historial);
+  }
+  confirmarPedido(){
+    //Envía la señal para que el historial se cargue
+    //this.msg.enviarSeñal();
+    if(this.cartItems.length != 0){
+      this.showConfirm();
+    } else {
+      console.log("No seas sapo")
+    }
+  }
+
+  swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      
+    },
+    buttonsStyling: false
+  })
+  showConfirm(){
+    this.swalWithBootstrapButtons.fire({
+      title: 'Pedido en camino',
+      icon: "success",
+      showConfirmButton: true,
+      confirmButtonText: "De acuerdo",
+      width: 600,
+      padding: '3em',
+      
+    })
   }
 }
 

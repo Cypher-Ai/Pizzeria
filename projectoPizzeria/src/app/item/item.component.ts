@@ -5,6 +5,9 @@ import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
 //Texto de alerta
 import Swal from 'sweetalert2';
+import { PersonaServicio } from '../persona.service';
+import { Router } from '@angular/router';
+import { Persona } from '../persona.model';
 
 @Component({
   selector: 'app-item',
@@ -24,21 +27,33 @@ export class ItemComponent{
   indice!: number;
 
 
-  constructor(private msj: CartService){
+  constructor(private msj: CartService, private personaServicio: PersonaServicio, private router: Router){
+  }
+  usuarioLogeado!: Persona;
+  logged!:boolean;
+  
 
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnInit(): void {
+    this.usuarioLogeado=this.personaServicio.usuarioLogeado;
+    this.logged=this.personaServicio.logged;
+    
+    console.log(this.logged); 
   }
 
   // tslint:disable-next-line: typedef
   AddToCart(){
     // Enviar el producto
-    if (this.Seleccionado != "Seleccione un tipo") {
-    // tslint:disable-next-line: max-line-length
-      this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
-      this.msj.enviarDatos(this.cartItem);
-      this.showAdded();
-    } else {
-      this.showAlert();
-    }
+    
+      if (this.Seleccionado != "Seleccione un tipo") {
+        // tslint:disable-next-line: max-line-length
+          this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
+          this.msj.enviarDatos(this.cartItem);
+          this.showAdded();
+        } else {
+          this.showAlert();
+        }
+      
   }
   // tslint:disable-next-line: typedef
   capturarPrecio(){

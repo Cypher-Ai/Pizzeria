@@ -33,6 +33,7 @@ import { AccountInfoComponent } from './account-info/account-info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DatePipe } from '@angular/common';
+import { HistorialComponent } from './historial/historial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { DatePipe } from '@angular/common';
     MisionComponent,
     RegistroLoginComponent,
     RegistroComponent,
-    CartItemComponent
+    CartItemComponent,
+    HistorialComponent
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,9 @@ export class CartService{
     subject_remove = new Subject();
     subject_icono = new Subject();
     subject_shoppingcart = new Subject();
+    subject_Eliminarlista = new Subject();
+
+    subject_signal = new Subject();
 
     constructor(){}
 
@@ -23,6 +26,14 @@ export class CartService{
     // tslint:disable-next-line: typedef
     recibirDatos(){
         return this.subject.asObservable();
+    }
+    
+    enviarDatos_Eliminarlista(){
+        // console.log(item)
+        this.subject_Eliminarlista.next()
+    }
+    recibirDatos_Eliminarlista(){
+        return this.subject_Eliminarlista.asObservable();
     }
 
     enviarDatos_remove(item_remove: unknown){
@@ -50,5 +61,14 @@ export class CartService{
     // tslint:disable-next-line: typedef
     recibirDatos_shoppingcart(){
         return this.subject_shoppingcart.asObservable();
+    }
+
+    sendSignal(){
+        // console.log(item)
+        this.subject_signal.next()
+    }
+    // tslint:disable-next-line: typedef
+    receiveSignal(){
+        return this.subject_signal.asObservable();
     }
 }

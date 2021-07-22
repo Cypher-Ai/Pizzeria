@@ -2,6 +2,7 @@ import { Component, ViewChild} from '@angular/core';
 import { ItemService } from '../item/item.service';
 import { Item } from '../models/item';
 import { NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
@@ -27,9 +28,11 @@ export class ItemListComponent{
   }
   
   ngOnInit(){
+    
     this.items=this.ItemService.getItems();
     this.promociones=this.ItemService.getPromociones();
     this.extras=this.ItemService.getExtras();
     this.bebidas=this.ItemService.getbebidas();
   }
+
 }

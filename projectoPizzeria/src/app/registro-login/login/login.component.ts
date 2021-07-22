@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Persona } from '../../persona.model';
 import { PersonaServicio } from '../../persona.service';
+import { CartService } from 'src/app/cart-item/cart.service';
 import { Router } from '@angular/router';
+
+
 
 declare var jQuery: any;
 @Component({
@@ -25,7 +28,8 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private personaServicio: PersonaServicio,
-    private router: Router
+    private router: Router,
+    private msj: CartService
   ) {
     this.administradores = personaServicio.administradores;
     this.personas = personaServicio.personas;
@@ -99,6 +103,9 @@ export class LoginComponent {
       this.personaServicio.loggedAdmin=this.loggedAdmin;
       console.log("Usuario Logeado "+this.usuarioLogeado.nombres)
       console.log("Usuario Enviado "+ this.personaServicio.usuarioLogeado.nombres);
+      //Se envia una señal para limpiar el carrito
+      this.msj.enviarDatos_Eliminarlista();
+
     });    
   }
   private loginAdminCorrecto() {
@@ -114,6 +121,7 @@ export class LoginComponent {
       this.personaServicio.loggedAdmin=this.loggedAdmin;
       console.log("Usuario Logeado "+this.administradorLogeado)
       console.log("Usuario Enviado "+ this.personaServicio.usuarioLogeado);
+      
     });
   }
   private logContraseñaIncorreta() {
