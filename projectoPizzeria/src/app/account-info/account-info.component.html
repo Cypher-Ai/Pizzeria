@@ -121,24 +121,6 @@
         </div>
       </div>
 
-      <div style="margin: 15px;"></div>
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">Historial de pedidos: </h4>
-          <button (click)="Refrescar()">Refrescar</button>
-          <div>
-            <div style="margin: 15px 0px 10px 0px;">
-              <div style="margin: 20px;">
-                <div>
-                  <div *ngFor="let item of cartItems_h let i=index">
-                    {{item.id}}: {{item.itemsH[0].nombre}} ----> fecha: {{item.fecha}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <app-footer></app-footer>

@@ -140,10 +140,12 @@ export class CartComponent implements OnInit {
       let newFecha=this.datePipe.transform(fecha, 'dd-MM-yyyy');
       let hora=this.datePipe.transform(fecha, 'shortTime');
       let direccion=this.personaServicio.usuarioLogeado.direccion;
+      this.id=this.dashboardService.idPorEntregar;
+      this.dashboardService.idPorEntregar+=1;
+      this.cartTotal=Number(this.cartTotal.toFixed(2));
       if(newFecha != null && hora!=null){
         let pedidoData=new PedidoData(this.id,this.cartTotal,newFecha.toString(),hora.toString(),direccion);
         this.dashboardService.lstPedidos.unshift(pedidoData);
-        this.dashboardService.idPorEntregar+=1;
         console.log("Mensaje enviado "+pedidoData.total);
       }else{
         console.log("xdn't")

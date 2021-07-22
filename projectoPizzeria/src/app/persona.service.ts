@@ -26,7 +26,7 @@ export class PersonaServicio {
           ],
           '02/02/2002',
           '9:30',
-          'Urb. tu puta madre'
+          'Urb. Jose Gabriel Condorcanqui 220'
         ),
         new Pedido(
           2,
@@ -37,7 +37,7 @@ export class PersonaServicio {
           ],
           '02/02/2002',
           '10:30',
-          "Urb. tu hermana la cachera"
+          "Jr. José Ortíz Vergara N° 14"
         ),
         new Pedido(
           3,
@@ -46,7 +46,7 @@ export class PersonaServicio {
           ],
           '03/02/2002',
           '12:30',
-          "Jr. asd"
+          "Calle El Nazareno Mz A lt 2"
         ),
       ]
     ),
@@ -69,7 +69,7 @@ export class PersonaServicio {
           ],
           '02/02/2002',
           '9:30',
-          "Odio mi vida"
+          "Urb Mariscal Cáceres 150"
         ),
         new Pedido(
           2,
@@ -80,7 +80,7 @@ export class PersonaServicio {
           ],
           '02/02/2002',
           '10:30',
-          "Muy fuerte"
+          "Enace Mz T lt 14"
         ),
         new Pedido(
           3,
@@ -89,7 +89,7 @@ export class PersonaServicio {
           ],
           '03/02/2002',
           '12:30',
-          "La rcsmre"
+          "Jr los Andes 5ta cuadra"
         ),
       ]
     ),
