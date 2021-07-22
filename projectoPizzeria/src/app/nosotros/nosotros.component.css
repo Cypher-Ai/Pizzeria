@@ -1,27 +1,32 @@
-*{
-    font-family: "Rockwell";
-}
-h1{
-    font-family: "Rockwell";
-}
-h2{
-    font-family: "Rockwell";
-}
-h3{
-    font-family: "Rockwell";
-}
-.imagen{
-    display:block;
-    margin:auto;
-}
-.titulo{
-    text-align: center;
+* {
+  font-family: "Rockwell";
 }
 
-.slogan{
-    text-align: center;
+h1 {
+  font-family: "Rockwell";
 }
 
-.texto{
-    text-align: justify;
+h2 {
+  font-family: "Rockwell";
+}
+
+h3 {
+  font-family: "Rockwell";
+}
+
+.imagen {
+  display: block;
+  margin: auto;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.slogan {
+  text-align: center;
+}
+
+.texto {
+  text-align: justify;
 }

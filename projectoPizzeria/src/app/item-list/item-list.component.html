@@ -10,25 +10,27 @@
 </head>
 
 <body>
-  <app-login></app-login>
-  <app-registro></app-registro>
-  <div class="uno">
-    <app-header></app-header>
-  </div>
-  <div class="dos">
-    <app-header2></app-header2>
-  </div>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <ngb-carousel #carousel [interval]="5000">
-        <ng-template ngbSlide *ngFor="let image of banners">
-          <div class="picsum-img-wrapper">
-            <img [src]="image" alt="Random slide">
-          </div>
-        </ng-template>
-      </ngb-carousel>
+  <div>
+    <app-login></app-login>
+    <app-registro></app-registro>
+    <div class="uno">
+      <app-header></app-header>
     </div>
-
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <ngb-carousel #carousel [interval]="5000">
+          <ng-template ngbSlide *ngFor="let image of banners">
+            <div class="picsum-img-wrapper">
+              <img [src]="image" alt="Random slide">
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+      <br>
+      <div class="dos">
+        <app-header2 id="header"></app-header2>
+      </div>
+    </div>
     <div id="promociones" class="container">
       <h1>
         <p class="promociones">Nuestras promociones del dia</p>

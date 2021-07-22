@@ -71,14 +71,4 @@ export class Header2Component {
       this.headerActual="header"
     }
   }
-  
-
-  
-
-  
-
-  
-
-
-
 }
