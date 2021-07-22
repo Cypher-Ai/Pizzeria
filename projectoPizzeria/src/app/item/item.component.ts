@@ -79,7 +79,8 @@ export class ItemComponent{
     position: 'top-end',
     showConfirmButton: false,
     timer: 1000,
-    timerProgressBar: true    
+    timerProgressBar: true,
+    
   })
   
   

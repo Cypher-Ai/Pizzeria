@@ -1,81 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="tituloVentana" aria-hidden="true">
+    
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalLoginCliente">
 
-<body>
-  <app-login></app-login>
-  <app-registro></app-registro>
-  <div class="uno"> <app-header></app-header> </div>
-    <div class="album py-5 bg-light">
-      <div class="container" alt="max-width: 100%">
-        <h1><b>Carrito</b></h1>
-        <div class="card mb-2" alt="max-width: 100%">
-          <div class="row g-0">
-            <div class="col-md-5">
-              <div class="card-body">
-                <h5 class="card-title"><b>Producto</b></h5>
-              </div>              
-            </div>
-            <div class="col-md-2">
-              <div class="card-body">
-                <h5 id="pu" class="card-title"><b>Precio Unitario</b></h5>
-              </div>                
-            </div>
-            <div class="col-md-2">
-              <div class="card-body">
-                <h5 id="cantidad" class="card-title"><b>Cantidad</b></h5>
-              </div>                
-            </div>
-            <div class="col-md-2">
-              <div class="card-body">
-                <h5 id="subtotal" class="card-title"><b>Subtotal</b></h5>
+                <h1><b>Carrito</b></h1>
+
+
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container" alt="max-width: 100%">
+                  
+              <div class="card mb-2" alt="max-width: 100%">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="card-body">
+                      <h5 class="card-title"><b>Producto</b></h5>
+                    </div>              
+                  </div>
+                  <div class="col-md-2">
+                    <div class="card-body">
+                      <h5 id="pu" class="card-title"><b>Precio Unitario</b></h5>
+                    </div>                
+                  </div>
+                  <div class="col-md-2">
+                    <div class="card-body">
+                      <h5 id="cantidad" class="card-title"><b>Cantidad</b></h5>
+                    </div>                
+                  </div>
+                  <div class="col-md-2">
+                    <div class="card-body">
+                      <h5 id="subtotal" class="card-title"><b>Subtotal</b></h5>
+                    </div>
+                  </div>
+                  <div class="col-md">
+                    <div class="card-body">
+                      <h5 id="subtotal" class="card-title"><b></b></h5>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md">
-              <div class="card-body">
-                <h5 id="subtotal" class="card-title"><b></b></h5>
+              <div class="row">
+                  <div class="col-md-12" *ngFor="let item of cartItems">
+                    <app-cart-item [cartItem]="item"></app-cart-item>
+                  </div>        
               </div>
-            </div>
+              <div class="card mb-0" alt="max-width: 50%">
+                <div class="row g-0">
+                  <div class="col-md-3">
+                    
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card-body">
+                      <h5 id="totaltitulo" class="card-title"><b>TOTAL</b></h5>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-4">
+                    <div style="text-align: right;" class="card-body">
+                      <h5 id="total" class="card-title">{{cartTotal| currency:'PEN':'S/':'1.2-2'}}</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div class="card-body">
+                      <button id="boton" type="button" class="btn btn-success" (click)="enviarLista()" >Comprar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="modal-footer">
+
           </div>
         </div>
-        <div class="row">
-            <div class="col-md-12" *ngFor="let item of cartItems">
-              <app-cart-item [cartItem]="item"></app-cart-item>
-            </div>        
-        </div>
-        <div class="card mb-0" alt="max-width: 50%">
-          <div class="row g-0">
-            <div class="col-md-3">
-              
-            </div>
-            <div class="col-md-3">
-              <div class="card-body">
-                <h5 id="totaltitulo" class="card-title"><b>TOTAL</b></h5>
-              </div>
-            </div>
-            
-            <div class="col-md-5">
-              <div style="text-align: right;" class="card-body">
-                <h5 id="total" class="card-title">{{cartTotal| currency:'PEN':'S/':'1.2-2'}}</h5>
-              </div>
-            </div>
-            <div class="col-md-1">
-              <div class="card-body">
-                <button id="boton" type="button" class="btn btn-success" (click)="enviarLista()" >Comprar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
     </div>
-    <app-footer></app-footer>
-</body>
+</div>
 
 
-</html>

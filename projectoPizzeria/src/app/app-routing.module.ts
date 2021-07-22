@@ -40,10 +40,10 @@ const routes: Routes = [
     path: 'locales',
     component: LocalesComponent
   },
-  {
-    path: 'cart',
-    component: CartComponent
-  },
+  //{
+  //  path: 'cart',
+  //  component: CartComponent
+  //},
   {
     path: 'account',
     component: AccountInfoComponent
