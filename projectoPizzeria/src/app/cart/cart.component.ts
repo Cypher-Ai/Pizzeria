@@ -8,6 +8,7 @@ import { Persona } from '../persona.model';
 import { PersonaServicio } from '../persona.service';
 import Swal from 'sweetalert2';
 
+import { HistorialService } from '../historial/historial.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,7 @@ import Swal from 'sweetalert2';
 })
 export class CartComponent implements OnInit {
   cartItems: any[] =[];
-  cartItems_historial: any[]=[];
+  cartItems_historial: any[]=[] ;
 
   id: number=0;
     // Ejemplos con los que se puede llenar la lista
@@ -32,33 +33,20 @@ export class CartComponent implements OnInit {
               private dashboardService: DashboardService,
               private datePipe: DatePipe,
               private personaServicio: PersonaServicio,
+              private msj_h: HistorialService
       ) { }
   ngOnInit(): void {
-    console.log("xd?")
-    //Carga el precio Total que se muestra al lado del icono, específicamente lo carga ni bien inicia el componente
-    //Resuelve el error de que siempre inicie con 00.00
-    this.msj.receiveSignal().subscribe(
-      () => {
-      // tslint:disable-next-line: no-unused-expression
-      this.enviarIconoCartTotal();
-      },
-      
-    );
-    /*this.msg.recibirSeñal().subscribe(
-      () => {
-      // tslint:disable-next-line: no-unused-expression
-      this.enviarHistorial();
-      },
-      
-    );*/
-
     this.usuarioLogeado=this.personaServicio.usuarioLogeado;
     this.logged=this.personaServicio.logged;
-    //Se limpian los elementos del carrito si es que el usuario no está logueado
-    if(this.logged == false){
-      this.vaciarCarrito();
-    }
-    console.log(this.logged);
+
+    this.msj.receiveSignal().subscribe(
+      () => {
+        this.logged=this.personaServicio.logged;
+      // tslint:disable-next-line: no-unused-expression
+      this.enviarIconoCartTotal();
+      this.reiniciarValores();
+      },
+    );
 
     this.msj.recibirDatos().subscribe(
       (item: any) => {
@@ -74,8 +62,9 @@ export class CartComponent implements OnInit {
       // tslint:disable-next-line: no-unused-expression
       
       this.removeProductTocart(this.cartItems, item_remove);
-      this.removeProductTocart(this.cartItems_historial, item_remove);
+
       console.log(this.cartItems)
+
       },
       
     );
@@ -83,7 +72,7 @@ export class CartComponent implements OnInit {
     this.msj.recibirDatos_Eliminarlista().subscribe(
       () => {
       // tslint:disable-next-line: no-unused-expression
-      this.vaciarCarrito();
+      this.cartItems = [];
       console.log("Ya no hay elementos en el carrito")
       },
       
@@ -153,24 +142,37 @@ export class CartComponent implements OnInit {
     
   }
 
-  vaciarCarrito(){
-    this.cartItems = [];
-  }
 
+  reiniciarValores(){
+    console.log(this.logged)
+    if(this.logged){
+      console.log("Está logueado")
+    } else {
+      
+      console.log("El carrito debería ser 0")
+      this.cartTotal = 0;
+      this.enviarIconoCartTotal();
+      this.cartItems = [];
+    }
+  }
   enviarIconoCartTotal(){
     this.msj.enviarDatos_icono(this.cartTotal);
     console.log("El total del Carrito es: " + this.cartTotal)
   }
-  
-  enviarHistorial(){
-    console.log("Se envía el historial")
-    //this.msg.enviarHistorial(this.cartItems_historial);
-  }
+
   confirmarPedido(){
-    //Envía la señal para que el historial se cargue
-    //this.msg.enviarSeñal();
     if(this.cartItems.length != 0){
       this.showConfirm();
+      this.cartItems_historial = [];
+      console.log("Función confirmarPedido")
+      for (const i in this.cartItems) {
+        this.cartItems_historial.push(this.cartItems[i]);
+      }
+      console.log("Enviando el historial")
+      this.msj_h.enviarHistorial(this.cartItems_historial);
+
+    console.log(this.cartItems_historial)
+    
     } else {
       console.log("No seas sapo")
     }

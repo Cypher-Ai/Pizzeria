@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart-item/cart.service';
+import { CartComponent } from '../cart/cart.component';
+import { HistorialComponent } from '../historial/historial.component';
+import { HistorialService } from '../historial/historial.service';
 
 import { HistorialItem } from '../models/historial-item';
 import { Persona } from '../persona.model';
@@ -12,44 +15,34 @@ import { PersonaServicio } from '../persona.service';
 })
 export class AccountInfoComponent implements OnInit {
   usuarioLogeado!: Persona;
-
-  HistorialItems: any[] = this.cargarHistorial();
-  constructor(private msj: CartService, private personaServicio:PersonaServicio) { }
+  historialItem!: HistorialItem;
+  // tslint:disable-next-line: variable-name
+  cartItems_h: any[] = [];
+  constructor(private msj: CartService, private msj_h: HistorialService, private personaServicio:PersonaServicio) { }
 
   ngOnInit(): void {
     
     this.usuarioLogeado=this.personaServicio.usuarioLogeado;
+    this.msj_h.recibirHistorial().subscribe(
+      (item: any) => {
+        console.log("Historial recibido con éxito")
+        // tslint:disable-next-line: new-parens
+        this.historialItem = (this.generarItemHistorial(item));
+        
+        this.cartItems_h.push(this.historialItem)
+        console.log(this.cartItems_h)
+      }
+    )
 
   }
   cargarHistorial(){
-    console.log("Historial cargado con éxito")
-    /*this.msg.recibirHistorial2().subscribe(
-      (item: any)=>{
-
-        this.HistorialItems = item;
-
-        console.log("El historial fue recibido con éxito")
-
-        console.log(item)
-      }
-    )*/
-    console.log(this.HistorialItems)
-    return this.HistorialItems;
+    
+    return this.cartItems_h;
   }
+
   Refrescar(){
     this.cargarHistorial();
   }
-  cartItems_h: any[] = [];
-  historialItem!: HistorialItem;
-
-    /*this.msj.recibirDatos_shoppingcart().subscribe(
-      (item: any) => {
-        console.log(item)
-        this.generarItemHistorial(item);
-      },
-      
-    );*/
-  
   
   id = 0;
   fecha = "1";
@@ -57,18 +50,12 @@ export class AccountInfoComponent implements OnInit {
   generarItemHistorial(item: any){
     this.id++;
     this.fecha += "/0"
-    this.historialItem = new HistorialItem(this.id,[], this.fecha);
+    this.historialItem = new HistorialItem(this.id,item, this.fecha);
     // tslint:disable-next-line: forin
-    for(let i in item){
-      this.historialItem.itemsH.push(item[i]);
-    }
-    this.cartItems_h.push(this.historialItem);
-    
-  }
-
-  enviarHistorial(){
-    console.log("Ahora sí envía el historial")
-    //this.msg.enviarHistorial2(this.cartItems_h);
     console.log(this.historialItem)
+    console.log("Aquí es donde debería pushear los pedidos")
+    console.log("Esto es si es que terminó de pushear con éxito")
+
+    return this.historialItem;
   }
 }
