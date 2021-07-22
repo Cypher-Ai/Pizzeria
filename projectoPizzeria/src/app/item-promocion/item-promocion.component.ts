@@ -7,6 +7,8 @@ import { CartItem } from '../models/cart-item';
 //Texto de alerta
 import Swal from 'sweetalert2';
 import { PersonaServicio } from '../persona.service';
+import { Router } from '@angular/router';
+import { Persona } from '../persona.model';
 
 
 @Component({
@@ -26,9 +28,19 @@ export class ItemPromocionComponent implements OnInit{
   verSeleccion: string = '';
 
   indice!: number;
-  logged!: boolean;
-  constructor(private msj: CartService, private personaServicio: PersonaServicio){
+  
+  constructor(private msj: CartService, private personaServicio: PersonaServicio, private router: Router){
+  }
+  usuarioLogeado!: Persona;
+  logged!:boolean;
+  
+
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnInit(): void {
+    this.usuarioLogeado=this.personaServicio.usuarioLogeado;
+    this.logged=this.personaServicio.logged;
     
+    console.log(this.logged); 
   }
   ngOnInit(){
     this.logged=this.personaServicio.logged;
@@ -84,12 +96,9 @@ export class ItemPromocionComponent implements OnInit{
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 3000,
+    timer:900,
     timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
+    
   })
   
   

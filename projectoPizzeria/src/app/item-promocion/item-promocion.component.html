@@ -33,6 +33,11 @@
               <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
             </button>
         </div>
+        <div>
+          <button *ngIf="logged" class="btn btn-success cart-button px-3" (click)="capturarPrecio()" (click)="AddToCart()">
+            <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

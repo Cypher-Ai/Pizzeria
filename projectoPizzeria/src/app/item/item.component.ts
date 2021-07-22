@@ -6,6 +6,9 @@ import { CartItem } from '../models/cart-item';
 import { PersonaServicio } from '../persona.service';
 //Texto de alerta
 import Swal from 'sweetalert2';
+import { PersonaServicio } from '../persona.service';
+import { Router } from '@angular/router';
+import { Persona } from '../persona.model';
 
 @Component({
   selector: 'app-item',
@@ -26,8 +29,18 @@ export class ItemComponent implements OnInit{
 
   logged!:boolean;
 
-  constructor(private msj: CartService, private personaServicio: PersonaServicio){
+  constructor(private msj: CartService, private personaServicio: PersonaServicio, private router: Router){
+  }
+  usuarioLogeado!: Persona;
+  logged!:boolean;
+  
 
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnInit(): void {
+    this.usuarioLogeado=this.personaServicio.usuarioLogeado;
+    this.logged=this.personaServicio.logged;
+    
+    console.log(this.logged); 
   }
   ngOnInit(){
     this.logged=this.personaServicio.logged;
@@ -36,14 +49,16 @@ export class ItemComponent implements OnInit{
   // tslint:disable-next-line: typedef
   AddToCart(){
     // Enviar el producto
-    if (this.Seleccionado != "Seleccione un tipo") {
-    // tslint:disable-next-line: max-line-length
-      this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
-      this.msj.enviarDatos(this.cartItem);
-      this.showAdded();
-    } else {
-      this.showAlert();
-    }
+    
+      if (this.Seleccionado != "Seleccione un tipo") {
+        // tslint:disable-next-line: max-line-length
+          this.cartItem = new CartItem(this.productItem.id, this.productItem.nombre + " - " + String(this.productItem.detallesPrecios[this.indice]), this.productItem.detalles, this.productItem.precios[this.indice], 1, this.productItem.imgUrl);
+          this.msj.enviarDatos(this.cartItem);
+          this.showAdded();
+        } else {
+          this.showAlert();
+        }
+      
   }
   // tslint:disable-next-line: typedef
   capturarPrecio(){
@@ -84,7 +99,8 @@ export class ItemComponent implements OnInit{
     position: 'top-end',
     showConfirmButton: false,
     timer: 1000,
-    timerProgressBar: true    
+    timerProgressBar: true,
+    
   })
   
   
