@@ -1,23 +1,30 @@
-import { Component, Inject} from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { ItemService } from '../item/item.service';
 import { Item } from '../models/item';
+import { NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.css']
+  styleUrls: ['./item-list.component.css'],
+  providers: [NgbCarouselConfig]
 })
 
 export class ItemListComponent{
   banners= [
-    {path: "../../assets/Recurso 1.png"},
-    {path: "../../assets/Las picositas.jpg"},
-    {path: "../../assets/La seguna vuelta.jpg"}
+    "../../assets/Recurso 1.png",
+    "../../assets/Las picositas.jpg",
+    "../../assets/La seguna vuelta.jpg"
   ]
+
+  
   items: Item[] = []
   promociones: Item[] =[]
   extras: Item[] = []
   bebidas: Item[] = []
-  constructor(private ItemService:ItemService) { }
+  constructor(private ItemService:ItemService, config: NgbCarouselConfig) {
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = true;
+  }
   
   ngOnInit(){
     this.items=this.ItemService.getItems();
@@ -25,5 +32,4 @@ export class ItemListComponent{
     this.extras=this.ItemService.getExtras();
     this.bebidas=this.ItemService.getbebidas();
   }
-  
 }

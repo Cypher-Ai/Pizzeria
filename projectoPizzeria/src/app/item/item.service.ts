@@ -28,10 +28,10 @@ export class ItemService {
     [37.50,45.50],["Grande","Familiar"],"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pedidosya.cl%2Fblog%2Fwp-content%2Fuploads%2Fsites%2F2%2F2018%2F05%2Fpizza-espanola.jpg&f=1&nofb=1"),
     
     new Item(7,"Pizza Hawaiana Chiken BBBQ","Exquisita Pizza Tropical bañada en sabrosa Salsa Barbacoa, combinada con Pollo a la parrilla, Tocino, Cebolla Blanca y jugosos trozos de Piña. ¡Te la recomendamos!",
-    [45.50,53,50],["Grande","Familiar"],"https://i.pinimg.com/originals/24/d0/d1/24d0d1170041a54d790b06108a1039c2.jpg"),
+    [45.50,53],["Grande","Familiar"],"https://i.pinimg.com/originals/24/d0/d1/24d0d1170041a54d790b06108a1039c2.jpg"),
     
     new Item(8,"Pizza Siciliana","¡Las mejores carnes embutidas en una sola Pizza! Hecha para los amantes del Salame, Chorizo, Salchicha Italiana y Pepperoni. Junto a nuestro exiquisito Queso Mozzarella hacen de esta pizza una verdadera delicia.",
-    [45.50,53,50],["Grande","Familiar"],"https://www.vanidades.com/wp-content/uploads/2018/06/Pizza-siciliana-de-kamut.jpg")
+    [45.50,53],["Grande","Familiar"],"https://www.vanidades.com/wp-content/uploads/2018/06/Pizza-siciliana-de-kamut.jpg")
   ]
 
   promociones: Item[]=[
@@ -81,6 +81,7 @@ export class ItemService {
     new Item(8, "Inca Kola 500 mL sin Azucar","Inca Kola sin Azucar",
     [2.5],["Personal"], "https://dsnyk1xc1sxw4.cloudfront.net/media/catalog/product/i/k/ik-500-770px-x-488px_2.webp"),
   ]
+
   constructor() { }
 
   getItems(): Item[]{

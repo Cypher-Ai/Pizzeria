@@ -1,0 +1,15 @@
+.card-body{
+    text-align: center;
+}
+#total{
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+#totaltitulo{
+    margin-right: 1.5vw;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   }

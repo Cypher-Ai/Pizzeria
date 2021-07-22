@@ -1,0 +1,100 @@
+<div>
+    <app-widget-area [data]="bigChart"></app-widget-area>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <div class="mat-elevation-z8">
+            <h4><b>Pedidos por entregar</b></h4>
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="fecha">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="hora">
+                    <th mat-header-cell *matHeaderCellDef> Hora </th>
+                    <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="ubicacion">
+                    <th mat-header-cell *matHeaderCellDef> Ubicacion </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ubicacion}} </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+    </div>
+    <div fxFlex="50">
+        <div class="mat-elevation-z8">
+            <h4><b>Pedidos entregados</b></h4>
+            <table mat-table [dataSource]="dataSource2">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                    <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="fecha">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="hora">
+                    <th mat-header-cell *matHeaderCellDef> Hora </th>
+                    <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="ubicacion">
+                    <th mat-header-cell *matHeaderCellDef> Ubicacion </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ubicacion}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>

@@ -1,8 +1,7 @@
-.card{
-    height: 60vh;
-    max-height: 500px;
+.card {
+  height: 45vh;
+  max-height: 500px;
 }
-img{
-    height: 50%;
-    object-fit: cover;
+img {
+  height: 50%;
 }

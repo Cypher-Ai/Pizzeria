@@ -1,0 +1,37 @@
+.mg-fluiid{
+    margin-top: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+}
+.card-title{
+    display: block;
+    margin-top: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+}
+.form-group input{
+    width: 45%;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: rgb(119, 119, 131);
+}
+
+.card-body{
+    text-align: center;
+}
+#imagen{
+    width: 90px;
+}
+.imaytex{
+    float: left;
+}
+#subtotal{
+    
+}
+.btn{
+    margin-right: 0vw;
+}

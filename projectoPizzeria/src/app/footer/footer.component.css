@@ -1,3 +1,8 @@
+*{
+    font-family: "Rockwell";
+    font-size: 15px;
+}
+
 footer .main-footer{ 
     padding: 20px 0;  background: #ba151a;
 }

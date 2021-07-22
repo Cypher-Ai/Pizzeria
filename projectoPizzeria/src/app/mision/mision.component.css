@@ -1,0 +1,77 @@
+*{
+    font-family: "Rockwell";
+    font-size: 15px;
+}
+h1{
+    font-family: "Rockwell";
+}
+h2{
+    font-family: "Rockwell";
+}
+
+.titulo{
+    text-align: center;
+    margin-bottom: 80px;
+
+
+}
+
+.mision{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.misionimg{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.vision{
+    margin-top: auto;
+    margin-bottom: auto;
+
+    text-align: center;
+}
+
+.visionimg{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.valores{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.valoresimg{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img{
+    width: 400px; height: 300px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    gap: 1em;
+    grid-template-rows: nimax(20px,auto);
+}
+
+.interno{
+    width: 400px; height: 300px;
+}
+
+#vision{
+    width: 297px; 
+    height: 373px;
+}

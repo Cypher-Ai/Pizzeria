@@ -1,0 +1,9 @@
+.imgProfile {
+    width:150px;
+    height:150px;
+    border-radius:75px;   
+}
+*{
+    font-family: "Rockwell";
+    font-size: 15px;
+}
