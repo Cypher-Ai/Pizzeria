@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   cartItems: any[] =[];
   cartItems_historial: any[]=[];
 
-  id: number=0;
+  id!: number;
     // Ejemplos con los que se puede llenar la lista
     // { id: 1, nombre: 'Pizza 1', detalles: '', precio: 0, cantidad: 1, imgUrl: '' },
     // { id:2, nombre:"Pizza 2", detalles:"", precio:10, cantidad:2, imgUrl:"" },
@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
       },
       
     );*/
-
+    this.id=this.dashboardService.idPorEntregar;
     this.usuarioLogeado=this.personaServicio.usuarioLogeado;
     this.logged=this.personaServicio.logged;
     //Se limpian los elementos del carrito si es que el usuario no está logueado
@@ -139,9 +139,11 @@ export class CartComponent implements OnInit {
       let fecha=new Date();
       let newFecha=this.datePipe.transform(fecha, 'dd-MM-yyyy');
       let hora=this.datePipe.transform(fecha, 'shortTime');
+      let direccion=this.personaServicio.usuarioLogeado.direccion;
       if(newFecha != null && hora!=null){
-        let pedidoData=new PedidoData(this.id,this.cartTotal,newFecha.toString(),hora.toString(),"Esto tiene que cambiarse");
-        this.dashboardService.lstPedidos.push(pedidoData);
+        let pedidoData=new PedidoData(this.id,this.cartTotal,newFecha.toString(),hora.toString(),direccion);
+        this.dashboardService.lstPedidos.unshift(pedidoData);
+        this.dashboardService.idPorEntregar+=1;
         console.log("Mensaje enviado "+pedidoData.total);
       }else{
         console.log("xdn't")
@@ -190,9 +192,11 @@ export class CartComponent implements OnInit {
       showConfirmButton: true,
       confirmButtonText: "De acuerdo",
       width: 600,
-      padding: '3em',
-      
+      padding: '3em',      
     })
+    this.cartTotal=0;
+    this.cartItems=[];
+    this.enviarIconoCartTotal();
   }
 }
 

@@ -17,7 +17,7 @@
       <p class="card-text">{{promocionItem.detalles}}</p>
       <div class="mt-auto d-flex justify-content-between">
         <fieldset class="form-group">
-          <select  [(ngModel)]="Seleccionado" class="form-select" id="item">
+          <select [(ngModel)]="Seleccionado" class="form-select" id="item">
             <option disabled selected>Seleccione un tipo</option>
             <option [ngValue]="i" *ngFor="let precio of promocionItem.precios let i=index">
               {{promocionItem.detallesPrecios[i]}} - {{promocionItem.precios[i]| currency:'PEN':'S/':'1.2-2'}}</option>
@@ -25,16 +25,12 @@
         </fieldset>
         <div>
           <a *ngIf="!logged" class="nav-link" data-bs-toggle="modal" href="#loginCliente" role="button">
-            <button  class="btn btn-success cart-button px-3">
+            <button class="btn btn-success cart-button px-3">
               <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
             </button>
-            </a>
-            <button *ngIf="logged" class="btn btn-success cart-button px-3" (click)="capturarPrecio()" (click)="AddToCart()">
-              <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
-            </button>
-        </div>
-        <div>
-          <button *ngIf="logged" class="btn btn-success cart-button px-3" (click)="capturarPrecio()" (click)="AddToCart()">
+          </a>
+          <button *ngIf="logged" class="btn btn-success cart-button px-3" (click)="capturarPrecio()"
+            (click)="AddToCart()">
             <fa-icon [icon]="faShoppingCart"></fa-icon><span> Añadir al carrito</span>
           </button>
         </div>

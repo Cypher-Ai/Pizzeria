@@ -42,9 +42,6 @@ export class ItemPromocionComponent implements OnInit{
     
     console.log(this.logged); 
   }
-  ngOnInit(){
-    this.logged=this.personaServicio.logged;
-  }
   // tslint:disable-next-line: typedef
   AddToCart(){
     

@@ -12,8 +12,12 @@
 <body>
   <app-login></app-login>
   <app-registro></app-registro>
-  <div class="uno"> <app-header></app-header> </div>
-  <div class="dos"> <app-header2></app-header2> </div>
+  <div class="uno">
+    <app-header></app-header>
+  </div>
+  <div class="dos">
+    <app-header2></app-header2>
+  </div>
   <div class="album py-5 bg-light">
     <div class="container">
       <ngb-carousel #carousel [interval]="5000">
@@ -26,7 +30,9 @@
     </div>
 
     <div id="promociones" class="container">
-      <h1><p class="promociones">Nuestras promociones del dia</p></h1>
+      <h1>
+        <p class="promociones">Nuestras promociones del dia</p>
+      </h1>
       <div class="row">
         <div class="col-xs-1 col-md-6" *ngFor="let promocion of promociones">
           <app-item-promocion [promocionItem]="promocion"></app-item-promocion>
@@ -34,7 +40,9 @@
       </div>
     </div>
     <div id="pizzas" class="container">
-      <h1><p class="pizzas">Nuestas deliciosas Pizzas:</p></h1>
+      <h1>
+        <p class="pizzas">Nuestas deliciosas Pizzas:</p>
+      </h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let item of items">
           <app-item [productItem]="item"></app-item>
@@ -42,7 +50,9 @@
       </div>
     </div>
     <div id="extras" class="container">
-      <h1><p class="extras">Extras: </p></h1>
+      <h1>
+        <p class="extras">Extras: </p>
+      </h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let extra of extras">
           <app-item [productItem]="extra"></app-item>
@@ -50,7 +60,9 @@
       </div>
     </div>
     <div id="bebidas" class="container">
-      <h1><p class="bebidas">Bebidas: </p></h1>
+      <h1>
+        <p class="bebidas">Bebidas: </p>
+      </h1>
       <div class="row">
         <div class="col-xs-1 col-md-4" *ngFor="let bebida of bebidas">
           <app-item [productItem]="bebida"></app-item>

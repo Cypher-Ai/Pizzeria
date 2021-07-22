@@ -6,7 +6,6 @@ import { CartItem } from '../models/cart-item';
 import { PersonaServicio } from '../persona.service';
 //Texto de alerta
 import Swal from 'sweetalert2';
-import { PersonaServicio } from '../persona.service';
 import { Router } from '@angular/router';
 import { Persona } from '../persona.model';
 
@@ -32,7 +31,6 @@ export class ItemComponent implements OnInit{
   constructor(private msj: CartService, private personaServicio: PersonaServicio, private router: Router){
   }
   usuarioLogeado!: Persona;
-  logged!:boolean;
   
 
   // tslint:disable-next-line: use-lifecycle-interface
@@ -41,10 +39,6 @@ export class ItemComponent implements OnInit{
     this.logged=this.personaServicio.logged;
     
     console.log(this.logged); 
-  }
-  ngOnInit(){
-    this.logged=this.personaServicio.logged;
-    console.log("Estado: "+this.logged);
   }
   // tslint:disable-next-line: typedef
   AddToCart(){

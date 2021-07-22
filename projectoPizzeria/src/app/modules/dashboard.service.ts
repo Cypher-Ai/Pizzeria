@@ -7,35 +7,35 @@ import { PedidoData } from '../models/pedido-data';
 
 
 export class DashboardService {
-
+  idPorEntregar:number =0;
   constructor() { }
 
   lstPedidos: PedidoData[] = [
+    
+  ];
+
+  lstEntregados: PedidoData[]=[
     { 
-      id: 0, 
-      total: 45.5, 
-      fecha: '02/02/2002',
-      hora: '9:30',
-      ubicacion: "Odio mi vida",
+      id: 2, 
+      total: 70, 
+      fecha: '20/07/2021',
+      hora: '16:40 p.m',
+      ubicacion: "Asociación Señor del Huerto Mz 'A' lt 4",
     },
     { 
       id: 1, 
       total: 102.5, 
-      fecha: '04/02/2002',
-      hora: '12:30',
-      ubicacion: "Odio mi vida²",
+      fecha: '19/02/2002',
+      hora: '13:40 p.m',
+      ubicacion: "Jr. Finlandia N° 445",
     },
     { 
-      id: 2, 
-      total: 69.42, 
-      fecha: '02/02/2002',
-      hora: '11:30',
-      ubicacion: "Odio mi vida³",
+      id: 0, 
+      total: 45.5, 
+      fecha: '19/07/2021',
+      hora: '11:30 a.m',
+      ubicacion: "Jr. Londres N° 255",
     }
-  ];
-
-  lstEntregados: PedidoData[]=[
-
   ]
   getLstPedidos(){
     return this.lstPedidos;
