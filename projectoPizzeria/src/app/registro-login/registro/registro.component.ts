@@ -20,6 +20,7 @@ export class RegistroComponent implements OnInit {
   fechaNacimientoInput!: string;
   contraseniaInput!: string;
   confimarContraseniaInput!: string;
+  direccionInput!: string;
   persona!: Persona;
   personas: Persona[] = [];
   formRegistro!: FormGroup;
@@ -38,6 +39,7 @@ export class RegistroComponent implements OnInit {
         telefono: ['', [Validators.required, Validators.min(0)]],
         nroDni: ['', [Validators.required, Validators.min(0)]],
         fechaNacimiento: ['', [Validators.required]],
+        direccionInputForm: ['', [Validators.required]],
         correo: ['', [Validators.required, Validators.email]],
         contrasenia: [
           null,
@@ -89,6 +91,7 @@ export class RegistroComponent implements OnInit {
         this.numeroDniInput,
         this.correoInput,
         this.fechaNacimientoInput,
+        this.direccionInput,
         this.contraseniaInput,
         []
       );
@@ -127,8 +130,8 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-  //metodo para subir formulario
-  public onSubmit() {
+   //metodo para subir formulario
+   public onSubmit() {
     this.submitted = true;
     if (this.formRegistro.invalid) {
       return;

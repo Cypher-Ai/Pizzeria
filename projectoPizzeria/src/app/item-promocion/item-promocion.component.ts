@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Item } from '../models/item';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 //Conexión con el carrito
@@ -6,6 +6,7 @@ import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
 //Texto de alerta
 import Swal from 'sweetalert2';
+import { PersonaServicio } from '../persona.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
   templateUrl: './item-promocion.component.html',
   styleUrls: ['./item-promocion.component.css']
 })
-export class ItemPromocionComponent{
+export class ItemPromocionComponent implements OnInit{
 
   @Input() 
   promocionItem!: Item;
@@ -25,9 +26,12 @@ export class ItemPromocionComponent{
   verSeleccion: string = '';
 
   indice!: number;
-  
-  constructor(private msj: CartService){
+  logged!: boolean;
+  constructor(private msj: CartService, private personaServicio: PersonaServicio){
     
+  }
+  ngOnInit(){
+    this.logged=this.personaServicio.logged;
   }
   // tslint:disable-next-line: typedef
   AddToCart(){

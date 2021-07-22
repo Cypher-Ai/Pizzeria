@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   logged!:boolean;
   loggedAdmin!:boolean;
   cartTotal = 0;
+
   constructor(private msj: CartService, private personaServicio: PersonaServicio, private router: Router) { }
 
   ngOnInit(): void {

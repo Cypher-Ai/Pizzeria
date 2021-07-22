@@ -14,6 +14,9 @@ export class Header2Component {
   estado4:string="";
   estado5:string="";
   estados:string[]=[this.estado1,this.estado2,this.estado3,this.estado4,this.estado5];
+
+  public secciones: Array<string> = ["promociones",'pizzas', 'extras', 'bebidas'];
+
   
   activarBoton(estado:string):void{
     for(var i=0;i<this.estados.length;i++){

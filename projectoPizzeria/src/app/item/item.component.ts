@@ -1,8 +1,9 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Item } from '../models/item';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../cart-item/cart.service';
 import { CartItem } from '../models/cart-item';
+import { PersonaServicio } from '../persona.service';
 //Texto de alerta
 import Swal from 'sweetalert2';
 
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent{
+export class ItemComponent implements OnInit{
   @Input()
   productItem!: Item;
   cartItem!: CartItem;
@@ -23,11 +24,15 @@ export class ItemComponent{
 
   indice!: number;
 
+  logged!:boolean;
 
-  constructor(private msj: CartService){
+  constructor(private msj: CartService, private personaServicio: PersonaServicio){
 
   }
-
+  ngOnInit(){
+    this.logged=this.personaServicio.logged;
+    console.log("Estado: "+this.logged);
+  }
   // tslint:disable-next-line: typedef
   AddToCart(){
     // Enviar el producto

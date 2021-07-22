@@ -9,6 +9,7 @@ export class Persona {
     public numeroDni: number,
     public correo: string,
     public fechaNacimiento: string,
+    public direccion: string,
     public contrasenia: string,
     public historialPedidos: Pedido[] = []
   ) {}

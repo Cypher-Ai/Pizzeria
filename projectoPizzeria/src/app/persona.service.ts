@@ -4,7 +4,7 @@ import { Persona } from './persona.model';
 
 export class PersonaServicio {
   usuarioLogeado!: Persona;
-  logged!:boolean;
+  logged:boolean=false;
   loggedAdmin!:boolean;
   personas: Persona[] = [
     new Persona(
@@ -15,6 +15,7 @@ export class PersonaServicio {
       71239980,
       'kevin@hotmail.com',
       '20/3/2000',
+      'Av. Brazil 325',
       'pruebaContraseña1',
       [
         new Pedido(
@@ -57,6 +58,7 @@ export class PersonaServicio {
       71239555,
       'Elbrayan@hotmail.com',
       '19/3/2000',
+      'Jr. 3 mascaras 223',
       'pruebaContraseña2',
       [
         new Pedido(
@@ -102,6 +104,7 @@ export class PersonaServicio {
       75684982,
       'theOne@hotmail.com',
       '15/3/2000',
+      'Jr.Domingo Nieto 225',
       'admin435343',
       []
     ),
